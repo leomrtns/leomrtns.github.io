@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>SpecImage python module</title>
+  <meta name="description" content="A showcase of the python module developed for the SAVVY project">
+  <meta name="author" content="Leonardo de Oliveira Martins">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/night.css" id="theme">
+  <!-- Code syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- Printing and PDF exports -->
+  <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body> 
+  <div class="reveal"> <div class="slides">
+  <section>
+    <h2>SpecImage module for python</h2>
+    <p>A general module for hyperspectral image analysis</p>
+    <div class="fragment">
+    </br></br>
+    <font size="4">Developed by Leonardo de Oliveira Martins at the University of Vigo and at the Imperial College London for the SAVVY Project. </font> 
+    </div>
+	</section>
+	<section>
+		<h3>Main Features</h3>
+    <ul>
+<!--      <li class="fragment"> Import text files from WiTec and Matlab; saving to Pickle format -->
+      <li > Import text files from WiTec and Matlab; saving to Pickle format
+      <li > Plotting of spectral densities
+      <li > Removal of noise and cosmic spikes from spectra
+      <li > Interpolation and rescaling (normalization)
+      <li > Image simplification/reduction
+      <li > Background and baseline corrections
+      <li > Endmember extraction and abundance maps
+      <li > Modelling, clustering and classification
+    </ul>
+	</section>
+	<section>
+    <section>
+    <h3>Noise and cosmic spikes</h3>
+	  </section>
+    <section>
+    Noise removal based on autocorrelation function 
+    <img width="70%" height="70%" src="showcase_pictures/example_acf.png"> 
+	  </section>
+    <section>
+    Cosmic spikes are found by derivatives over pixels and wave numbers 
+    <div class="animated-gif"> 
+    <img alt="showcase_pictures/a002_01_static.png" width="70%" height="70%" src="showcase_pictures/a002_01.gif"> 
+    </div>
+	  </section>
+	</section>
+
+	<section>
+    <h3>Plotting of distribution of spectra</h3>
+    <img class="fragment" width="70%" src="showcase_pictures/20150609.001.png"> 
+    <img class="fragment" width="70%" src="showcase_pictures/20150527.003.png"> 
+    </br>
+    <font size="4" color="red">OBS: the images represent distinct images</font>
+	</section>
+
+	<section>
+    <section>
+    <h3>Interpolation</h3>
+    <table style="width:100%"><tr>
+    <td><div class="fragment">
+    Savitzky–Golay filter </br>
+    <img width="70%" src="showcase_pictures/20150605.001.png">
+    </div></td>
+    <td><div class="fragment">
+    Moving average smoothing </br>
+    <img width="70%" src="showcase_pictures/20150605.002.png">
+    </div></td>
+    </tr></table> 
+    <div class="fragment">
+    Also</br>
+    <ul>
+      <li> Linear interpolation
+      <li> Spline interpolation
+      <li> LOWESS regression
+    </ul>
+    </div>
+	  </section>
+	  <section>
+    <h3>Prediction via interpolation</h3>
+    <table style="width:110%"><tr>
+    <td><div class="fragment">
+    <img width="100%" src="showcase_pictures/20150626_001.png">
+    </div></td>
+    <td><div class="fragment"><div class="animated-gif"> 
+    <img alt="showcase_pictures/a001_05_spline_smooth10_static.png" width="100%" src="showcase_pictures/a001_05_spline_smooth10.gif"> 
+    </div></div></td>
+    </tr></table> 
+	  </section>
+	  <section>
+    <h3>Normalization</h3>
+    <pre><code data-trim>
+def rescale_01(self):
+  # Linear rescaling to interval zero-one
+  self.spc = np.array([rescale_spectrum_01(spec) for spec in self.spc],dtype=float)
+  return self
+
+def rescale_zero(self):
+  # force series to start at zero, while maintaining range
+  self.spc = np.array([spec - min(spec) for spec in self.spc],dtype=float)
+  return self
+
+def rescale_mean(self):
+  # centralization to the mean
+  self.spc = np.array([spec/np.mean(spec) for spec in self.spc],dtype=float)
+  return self
+
+def rescale_zscore(self):
+  # Standardization of spectrum to a N(0,1)
+  self.spc = np.array([(spec - np.mean(spec))/np.std(spec) for spec in self.spc],dtype=float)
+  return self
+    </code></pre>
+	  </section>
+	</section>
+
+	<section>
+	  <section>
+    <h3>Simplification of spectral matrix</h3>
+    <table style="width:110%"><tr>
+    <td>
+    <img width="100%" src="showcase_pictures/20150520.002.png">
+    </br> Similar pixels replaced by 'exemplar' spectra </br>
+    </td>
+    <td><div class="fragment">
+    <img width="100%" src="showcase_pictures/20150520.004.png"> 
+    </br> List of 'exemplars' </br>
+    </div></div></td>
+    </tr></table> 
+	  </section>
+	</section>
+
+	<section>
+	  <section>
+    <h3>Background correction by PCA transform</h3>
+    <ul>
+      <li> Application of a PCA dimensionality reduction followed by inverse transform
+      <li> Recreates original data but using only principal components
+      <li> Can be applied over wave numbers or over spectra (pixels)
+	  </section>
+	  <section>
+    <div align="left">
+    <img width="50%" src="showcase_pictures/20150529.001.png"> 
+    (1) Original data</br>
+    <img width="50%" src="showcase_pictures/20150529.002.png">
+    (2) after PCA noise reduction</br>
+    <img width="50%" src="showcase_pictures/20150529.003.png"> 
+    (3) after PCA pixel reduction</br>
+    </div>
+	  </section>
+	</section>
+
+	<section>
+	  <section>
+    <h3>Baseline correction</h3>
+    <table style="width:100%"><tr>
+    <td>
+    <font size="4">Rubberband baseline</font></br>
+    <img width="100%" src="showcase_pictures/20150603.001.png">
+    </td>
+    <td>
+    <font size="4">Polynomial baseline</font></br>
+    <img width="100%" src="showcase_pictures/20150603.002.png">
+    </td></tr><tr><td>
+    <font size="4">Piecewise rubberband baseline</font></br>
+    <img width="100%" src="showcase_pictures/20150603.004.png">
+    </td>
+    <td>
+    <font size="4">Asymmetric least squares baseline</font></br>
+    <img width="100%" src="showcase_pictures/20150603.003.png">
+    </td></tr></table>
+	  </section>
+	</section>
+
+  </div></div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+			Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+//        fragments: true,
+        center: true,
+        transition: 'slide',
+				math: {
+					// mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+					config: 'TeX-AMS_HTML-full'
+				},
+        // Optional reveal.js plugins
+			  dependencies: [
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+
+					{ src: 'lib/js/classList.js' },
+					{ src: 'plugin/math/math.js', async: true }
+				]
+			});
+    // https://github.com/hakimel/reveal.js/issues/592 -- img: animated-gif
+    $(function () {
+      // on page load  replace all src URLs
+      $('.animated-gif').each(function (i, e) { disableGif(e) });
+    });
+    Reveal.addEventListener('slidechanged', initAnimatedGifs);
+    Reveal.addEventListener('ready', initAnimatedGifs);
+    function initAnimatedGifs(event) {
+      $('.animated-gif', event.currentSlide).each(function (i, e) { enableGif(e) });
+      if (event.previousSlide)
+        $('.animated-gif', event.previousSlide).each(function (i, e) { disableGif(e) });
+    }
+    function enableGif(e) {
+      var src = $(e).attr("src")
+      $(e).attr('src', src.replace('-image.gif', '.gif'));
+    }
+    function disableGif(e) {
+      var src = $(e).attr("src")
+      $(e).attr('src', src.replace('.gif', '-image.gif'));
+    }
+  </script>
+</body>
+</html>
