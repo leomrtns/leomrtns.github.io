@@ -65,7 +65,7 @@ author:
       url: "https://www.leomartins.org"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "leomrtns@gmail.com"
+      url: "mailto:leomrtns@gmail.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/leomrtns"
