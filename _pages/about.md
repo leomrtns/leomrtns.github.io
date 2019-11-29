@@ -3,6 +3,17 @@ permalink: /about/
 title: "About"
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+I am the Head of Phylogenomics at the [Quadram Institute Bioscience](https://quadram.ac.uk/) in Norwich, UK. 
+Previously I was a postdoctoral researcher working on Evolutionary Genomics at the [Dessimoz Group](http://lab.dessimoz.org) in the University of Lausanne, 
+where I was also affiliated to the [SIB Swiss Institute of Bioinformatics](https://www.isb-sib.ch). 
+I have also postdoctoral experience working with Hyperspectral Data Analysis at the [Stevens Group of Imperial College London](http://www.stevensgroup.org), 
+and with Evolutionary Biology at [David Posada's Phylogenomics Lab] of the University of Vigo. 
+I did my Ph.D. on Bayesian Phylogenetics at the [Laboratory of Biometry and Bioinformatics](https://sites.google.com/a/ut-biomet.org/lbm/home) of the University of Tokyo, 
+under the supervision of Prof. Hirohisa Kishino. 
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+
+>>> Core Bioinformatics, Quadram Institute Bioscience
+  Norwich Research Park, NR4 7UA
+  +44 1603 255 004
+  E-mail: leomrtns (at gmail com)  ||   Leonardo.de-Oliveira-Martins (at quadram.ac.uk)
+
