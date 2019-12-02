@@ -6,8 +6,7 @@ header:
   overlay_image: /assets/images/mm-home-page-feature.jpg
 excerpt: "Computational Biologist"
 intro: 
-  - excerpt: 'This page contains links to other pages, with code, documentation, and technical notes for bioinformatics
-    and computational evolutionary biology software.'
+  - excerpt: 'This page contains links to other pages, with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software.'
 feature_row:
   - image_path: /assets/images/logo_araiguma.jpg
     alt: "notebooks"
@@ -37,6 +36,7 @@ feature_row_left:
     excerpt: "Doxygen documentation for biomcmc-lib source code
     url: "https://leomrtns.github.io/doxygen-biomcmclib"
     btn_class: "btn--primary"
+    btn_label: "See documentation"
 ---
 {% include feature_row id="intro" type="center" %}
 
