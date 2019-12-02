@@ -21,7 +21,7 @@ feature_row:
     url: "https://bitbucket.org/leomrtns/guenomu/"
     btn_class: "btn--primary"
     btn_label: "Get software"
-  - image_path: /assets/images/mm-customizable-feature.png
+  - image_path: /assets/images/logo_biomcmc.png
     alt: "biomcmclib"
     title: "biomcmc-lib"
     excerpt: "C library with low level functions for phylogenetic analyses"
