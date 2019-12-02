@@ -29,11 +29,11 @@ feature_row:
     url: "https://github.com/quadram-institute-bioscience/biomcmc-lib"
     btn_class: "btn--primary"
     btn_label: "source code on github"
-feature_row_left:
+feature_rowleft:
   - image_path: /assets/images/logo_biomcmc.png
-    alt: "biomcmc-lib docs"
+    alt: "biomcmc-libdocs"
     title: "biomcmc-lib documentation"
-    excerpt: "Doxygen documentation for biomcmc-lib source code
+    excerpt: "Doxygen documentation for biomcmc-lib source code"
     url: "https://leomrtns.github.io/doxygen-biomcmclib"
     btn_class: "btn--primary"
     btn_label: "See documentation"
@@ -42,4 +42,4 @@ feature_row_left:
 
 {% include feature_row %}
 
-{% include feature_row id="feature_row_left" type="left" %}
+{% include feature_row id="feature_rowleft" type="left" %}
