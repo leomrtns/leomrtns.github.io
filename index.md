@@ -4,30 +4,42 @@ permalink: /
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/mm-home-page-feature.jpg
-excerpt: >
-    Computational Biologist 
+excerpt: "Computational Biologist"
+intro: 
+  - excerpt: 'This page contains links to other pages, with code, documentation, and technical notes for bioinformatics
+    and computational evolutionary biology software.'
 feature_row:
   - image_path: /assets/images/logo_araiguma.jpg
     alt: "notebooks"
-    title: "Bioinformatics Notebooks"
-    excerpt: "Documentation and technical notes about algorithms and implementations"
+    title: "Notebooks"
+    excerpt: "Technical notes on bioinformatics algorithms and implementations"
     url: "https://leomrtns.github.io/notebooks"
     btn_class: "btn--primary"
-    btn_label: "Go to Notebooks webpage"
+    btn_label: "Notebooks webpage"
   - image_path: /assets/images/mm-customizable-feature.png
     alt: "guenomu"
     title: "Guenomu"
     excerpt: "Species tree estimation from multi-gene family data"
     url: "https://bitbucket.org/leomrtns/guenomu/"
     btn_class: "btn--primary"
-    btn_label: "Get software"
+    btn_label: "source code on github"
   - image_path: /assets/images/logo_biomcmc.png
     alt: "biomcmclib"
     title: "biomcmc-lib"
     excerpt: "C library with low level functions for phylogenetic analyses"
     url: "https://github.com/quadram-institute-bioscience/biomcmc-lib"
     btn_class: "btn--primary"
-    btn_label: "Get software"
+    btn_label: "source code on github"
+feature_row_left:
+  - image_path: /assets/images/logo_biomcmc.png
+    alt: "biomcmc-lib docs"
+    title: "biomcmc-lib documentation"
+    excerpt: "Doxygen documentation for biomcmc-lib source code
+    url: "https://leomrtns.github.io/doxygen-biomcmclib"
+    btn_class: "btn--primary"
 ---
+{% include feature_row id="intro" type="center" %}
 
 {% include feature_row %}
+
+{% include feature_row id="feature_row_left" type="left" %}
