@@ -9,7 +9,7 @@ intro:
   - excerpt: 'This page contains links to other pages, with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software. <br>
   I also write here eventual posts that don't fit into the links belows'
 feature_row:
-  - image_path: /assets/images/logo_araiguma.jpg
+  - image_path: /assets/images/logo_araiguma.png
     alt: "notebooks"
     title: "Notebooks"
     excerpt: "Technical notes on bioinformatics algorithms and implementations"
@@ -39,3 +39,4 @@ feature_row:
     btn_label: "See documentation"
 ---
 {% include feature_row id="intro" type="center" %}
+{% include feature_row type="left" %}
