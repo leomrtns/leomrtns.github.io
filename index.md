@@ -6,10 +6,7 @@ header:
   overlay_image: /assets/images/mm-home-page-feature.jpg
 excerpt: "Computational Biologist"
 intro: 
-  - excerpt: |
-  This page contains links to other pages, with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software. 
-  <br> 
-  I also write here eventual posts that don't fit into the links belows
+  - excerpt: "This page contains links to other pages, with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software."
 feature_row:
   - image_path: /assets/images/logo_araiguma.png
     alt: "notebooks"
