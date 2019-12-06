@@ -1,9 +1,9 @@
 ---
 permalink: /about/
-title: "About"
+title: "About me"
 ---
 
-I am the Head of Phylogenomics at the [Quadram Institute Bioscience](https://quadram.ac.uk/) in Norwich, UK. 
+I am the Head of Phylogenomics at the [Quadram Institute Bioscience](https://quadram.ac.uk/) (QIB) in Norwich, UK. 
 There, I develop, implement, and streamline computational methods for the evolutionary analysis of microbial data sets.
 
 
@@ -17,9 +17,12 @@ under the supervision of Prof. Hirohisa Kishino.
 
 > **Core Bioinformatics, Quadram Institute Bioscience**
 >
->  Norwich Research Park, NR4 7UA
+>  Norwich Research Park, NR4 7UA, UK
 >
 >  +44 1603 255 004
 >  
 > Leonardo.de-Oliveira-Martins (at quadram.ac.uk)
 
+You can check my [personal repositories on github](https://github.com/leomrtns), 
+[on bitbucket](https://bitbucket.org/leomrtns/), and also 
+my [QIB institutional repository](https://github.com/quadram-institute-bioscience).
