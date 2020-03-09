@@ -4,7 +4,7 @@ title: "About me"
 ---
 
 I am the Head of Phylogenomics at the [Quadram Institute Bioscience](https://quadram.ac.uk/) (QIB) in Norwich, UK. 
-There, I develop, implement, and streamline computational methods for the evolutionary analysis of microbial data sets.
+I develop, implement, and streamline computational methods for the evolutionary analysis of microbial data sets.
 
 
 Previously I was a postdoctoral researcher working on Evolutionary Genomics at the [Dessimoz Group](http://lab.dessimoz.org) in the University of Lausanne, 
