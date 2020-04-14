@@ -15,21 +15,21 @@ feature_row:
     url: "https://leomrtns.github.io/notebooks"
     btn_class: "btn--primary btn--small"
     btn_label: "Notebooks webpage"
-  - image_path: /assets/images/mm-customizable-feature.png
+  - image_path: /assets/images/logo_guenomu.png
     alt: "guenomu"
     title: "Guenomu"
     excerpt: "Hierarchical Bayesian species tree estimation from multi-gene family data"
     url: "https://bitbucket.org/leomrtns/guenomu/"
     btn_class: "btn--primary btn--small"
     btn_label: "source code on bitbucket"
-  - image_path: /assets/images/mm-customizable-feature.png
+  - image_path: /assets/images/logo_genefam.png
     alt: "genefam_dist"
     title: "Genefam-dist"
     excerpt: "Signature inference of gene family trees from anchoring species trees."
     url: "https://github.com/leomrtns/genefam-dist"
     btn_class: "btn--primary btn--small"
     btn_label: "source code"
-  - image_path: /assets/images/mm-customizable-feature.png
+  - image_path: /assets/images/logo_specimage.png
     alt: "specimage"
     title: "SpecImage"
     excerpt: "Python module to work with hyperspectral imaging data."
