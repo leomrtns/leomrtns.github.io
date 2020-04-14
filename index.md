@@ -53,7 +53,7 @@ feature_row:
   - image_path: /assets/images/mm-customizable-feature.png
     alt: "super_distance"
     title: "Super Distance"
-    excerpt: "Supertree estimation from gene trees to species trees, using matrix representation with distances"
+    excerpt: "Supertree estimation from gene family trees, using matrix representation with distances"
     url: "https://github.com/quadram-institute-bioscience/super_distance"
     btn_class: "btn--primary btn--small"
     btn_label: "source code"
