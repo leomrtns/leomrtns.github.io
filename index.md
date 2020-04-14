@@ -4,6 +4,7 @@ permalink: /
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/mm-home-page-feature.jpg
+  overlay_filter: rgba(3, 3, 200, 0.1)
 excerpt: "Computational Biologist"
 intro: 
   - excerpt: "Below you will find links to other pages, with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software."
