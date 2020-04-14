@@ -28,17 +28,17 @@ feature_row:
     excerpt: "Signature inference of gene family trees from anchoring species trees."
     url: "https://github.com/leomrtns/genefam-dist"
     btn_class: "btn--primary btn--small"
-    btn_label: "source code"
+    btn_label: "source code on github"
   - image_path: /assets/images/logo_specimage.png
     alt: "specimage"
     title: "SpecImage"
     excerpt: "Python module to work with hyperspectral imaging data."
     url: "https://github.com/leomrtns/specimage"
     btn_class: "btn--primary btn--small"
-    btn_label: "source code"
+    btn_label: "source code on github"
   - image_path: /assets/images/logo_biomcmc.png
     alt: "biomcmclib"
-    title: "biomcmc-lib Software"
+    title: "biomcmc-lib library"
     excerpt: "C library with low level functions for phylogenetic analyses"
     url: "https://github.com/quadram-institute-bioscience/biomcmc-lib"
     btn_class: "btn--primary btn--small"
@@ -49,21 +49,21 @@ feature_row:
     excerpt: "Doxygen documentation for employing biomcmc-lib source code"
     url: "https://leomrtns.github.io/doxygen-biomcmclib"
     btn_class: "btn--primary btn--small"
-    btn_label: "See documentation"
+    btn_label: "API documentation page"
   - image_path: /assets/images/logo_superdistance.png
     alt: "super_distance"
     title: "Super Distance"
     excerpt: "Supertree estimation from gene family trees, using matrix representation with distances"
     url: "https://github.com/quadram-institute-bioscience/super_distance"
     btn_class: "btn--primary btn--small"
-    btn_label: "source code"
+    btn_label: "source code on github"
   - image_path: /assets/images/logo_biomc2.png
     alt: "recomb-biomc2"
     title: "recomb-biomc2"
     excerpt: "Hiearchical Bayesian Model for Viral Phylogenetic Recombination"
     url: "https://github.com/leomrtns/recomb-biomc2"
     btn_class: "btn--primary btn--small"
-    btn_label: "source code"
+    btn_label: "source code on github"
 ---
 {% include feature_row id="intro" type="center" %}
 <!--{% include feature_row id="feature_row" type="left" %} -->
