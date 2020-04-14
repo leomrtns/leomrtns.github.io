@@ -13,14 +13,14 @@ feature_row:
     title: "Notebooks"
     excerpt: "Technical notes on bioinformatics algorithms and implementations"
     url: "https://leomrtns.github.io/notebooks"
-    btn_class: "btn--primary"
+    btn_class: "btn--primary btn--small"
     btn_label: "Notebooks webpage"
   - image_path: /assets/images/mm-customizable-feature.png
     alt: "guenomu"
     title: "Guenomu"
     excerpt: "Species tree estimation from multi-gene family data"
     url: "https://bitbucket.org/leomrtns/guenomu/"
-    btn_class: "btn--primary"
+    btn_class: "btn--primary btn--small"
     btn_label: "source code on bitbucket"
   - image_path: /assets/images/logo_biomcmc.png
     alt: "biomcmclib"
