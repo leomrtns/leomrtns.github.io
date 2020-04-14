@@ -6,7 +6,7 @@ header:
   overlay_image: /assets/images/mm-home-page-feature.jpg
 excerpt: "Computational Biologist"
 intro: 
-  - excerpt: "This page contains links to other pages, with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software."
+  - excerpt: "Below you will find links to other pages, with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software."
 feature_row:
   - image_path: /assets/images/logo_araiguma.png
     alt: "notebooks"
@@ -27,14 +27,14 @@ feature_row:
     title: "biomcmc-lib Software"
     excerpt: "C library with low level functions for phylogenetic analyses"
     url: "https://github.com/quadram-institute-bioscience/biomcmc-lib"
-    btn_class: "btn--primary"
+    btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
   - image_path: /assets/images/logo_biomcmc.png
     alt: "biomcmc-libdocs"
     title: "biomcmc-lib documentation"
     excerpt: "Doxygen documentation for biomcmc-lib source code"
     url: "https://leomrtns.github.io/doxygen-biomcmclib"
-    btn_class: "btn--primary"
+    btn_class: "btn--primary btn--small"
     btn_label: "See documentation"
 ---
 {% include feature_row id="intro" type="center" %}
