@@ -76,5 +76,5 @@ featr_texts:
 {% include feature_row id="intro" type="center" %}
 {% include feature_row id="title_code" type="center" %}
 {% include feature_row id="featr_code" %}
-{% include feature_row id="title_texts" type="center" %}
-{% include feature_row id="featr_texts" %}
+<!--{% include feature_row id="title_texts" type="center" %}
+{% include feature_row id="featr_texts" %} -->
