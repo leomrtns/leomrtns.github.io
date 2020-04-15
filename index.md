@@ -10,7 +10,7 @@ intro:
 
 sep_code:
   - image_path: /assets/images/h_separator.png
-    excerpt: '<h3 class="notice--primary">Software and code </h3>'
+    excerpt: '<h1 class="notice--primary">Software and code </h1>'
 featr_code:
   - image_path: /assets/images/logo_guenomu.png
     alt: "guenomu"
@@ -57,7 +57,7 @@ featr_code:
 
 sep_texts:
   - image_path: /assets/images/h_separator.png
-    excerpt: '<h3 class="notice--info">Documentation and Texts</h3>'
+    excerpt: '<h1 class="notice--info">Documentation and Texts</h1>'
 featr_texts:
   - image_path: /assets/images/logo_araiguma.png
     alt: "notebooks"
@@ -83,13 +83,20 @@ featr_texts:
 
 sep_suppl:
   - image_path: /assets/images/h_separator.png
-    excerpt: '<h3 class="notice--warning">Supplementary analyses for manuscripts</h3>'
+    excerpt: '<h1 class="notice--warning">Supplementary analyses for manuscripts</h1>'
 featr_suppl:
   - image_path: /assets/images/logo_salmobiofilm.png
     alt: "Salmonella biofilm"
     title: "Salmonella Biofilm"
     excerpt: "Jupyter notebooks with analyses of experimental evolution of Salmonella biofilms"
     url: "https://github.com/quadram-institute-bioscience/2020.Salmonella_biofilm"
+    btn_class: "btn--warning btn--small"
+    btn_label: "github repository"
+  - image_path: /assets/images/logo_70s.png
+    alt: "long-read rRNA phylogenetics"
+    title: "rRNA phylogenetics"
+    excerpt: "Analysis of the phylogenetic resolution of the rRNA operon"
+    url: "https://github.com/quadram-institute-bioscience/70S-resolution"
     btn_class: "btn--warning btn--small"
     btn_label: "github repository"
 
