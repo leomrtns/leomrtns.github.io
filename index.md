@@ -10,7 +10,7 @@ intro:
 
 sep_code:
   - image_path: /assets/images/h_separator.png
-    excerpt: "Software and code"
+    excerpt: "Software and code {: .notice--primary}"
 featr_code:
   - image_path: /assets/images/logo_guenomu.png
     alt: "guenomu"
@@ -57,7 +57,7 @@ featr_code:
 
 sep_texts:
   - image_path: /assets/images/h_separator.png
-    excerpt: "Documentation and Texts"
+    excerpt: "Documentation and Texts {: .notice--info}"
 featr_texts:
   - image_path: /assets/images/logo_araiguma.png
     alt: "notebooks"
@@ -76,10 +76,22 @@ featr_texts:
   - image_path: /assets/images/logo_biomcmc_blog.png
     alt: "biomcmc-blog"
     title: "bioMCMC blog"
-    excerpt: "Old blog for phylogenetics discussions"
+    excerpt: "Old blog with phylogenetics observations and new papers"
     url: "http://biomcmc.blogspot.com"
     btn_class: "btn--info btn--small"
     btn_label: "read blog posts"
+
+sep_suppl:
+  - image_path: /assets/images/h_separator.png
+    excerpt: "Supplementary analyses for manuscripts {: .notice--warning}"
+featr_suppl:
+  - image_path: /assets/images/logo_salmobiofilm.png
+    alt: "Salmonella biofilm"
+    title: "Salmonella Biofilm"
+    excerpt: "Jupyter notebooks with analyses of experimental evolution of Salmonella biofilms"
+    url: "https://github.com/quadram-institute-bioscience/2020.Salmonella_biofilm"
+    btn_class: "btn--warning btn--small"
+    btn_label: "github repository"
 
 ---
 
@@ -88,3 +100,5 @@ featr_texts:
 {% include feature_row id="featr_code" %}
 {% include feature_row id="sep_texts" type="center" %}
 {% include feature_row id="featr_texts" %} 
+{% include feature_row id="sep_suppl" type="center" %}
+{% include feature_row id="featr_suppl" %} 
