@@ -10,7 +10,7 @@ intro:
 
 sep_code:
   - image_path: /assets/images/h_separator.png
-    excerpt: '<p class="notice--primary">Software and code </p>'
+    excerpt: '<h3 class="notice--primary">Software and code </h3>'
 featr_code:
   - image_path: /assets/images/logo_guenomu.png
     alt: "guenomu"
@@ -57,7 +57,7 @@ featr_code:
 
 sep_texts:
   - image_path: /assets/images/h_separator.png
-    excerpt: '<p class="notice--info">Documentation and Texts</p>'
+    excerpt: '<h3 class="notice--info">Documentation and Texts</h3>'
 featr_texts:
   - image_path: /assets/images/logo_araiguma.png
     alt: "notebooks"
@@ -83,7 +83,7 @@ featr_texts:
 
 sep_suppl:
   - image_path: /assets/images/h_separator.png
-    excerpt: '<p class="notice--warning">Supplementary analyses for manuscripts</p>'
+    excerpt: '<h3 class="notice--warning">Supplementary analyses for manuscripts</h3>'
 featr_suppl:
   - image_path: /assets/images/logo_salmobiofilm.png
     alt: "Salmonella biofilm"
