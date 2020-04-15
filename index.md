@@ -8,6 +8,9 @@ excerpt: "Computational Biologist"
 intro: 
   - excerpt: "Below you will find links to other pages with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software."
 
+sep_code:
+  - image_path: /assets/images/h_separator.png
+    excerpt: "Software and code"
 featr_code:
   - image_path: /assets/images/logo_guenomu.png
     alt: "guenomu"
@@ -52,6 +55,9 @@ featr_code:
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
 
+sep_texts:
+  - image_path: /assets/images/h_separator.png
+    excerpt: "Documentation and Texts"
 featr_texts:
   - image_path: /assets/images/logo_araiguma.png
     alt: "notebooks"
@@ -75,11 +81,10 @@ featr_texts:
     btn_class: "btn--info btn--small"
     btn_label: "read blog posts"
 
-separator:
-  - image_path: /assets/images/h_separator.png
 ---
 
 {% include feature_row id="intro" type="center" %}
+{% include feature_row id="sep_code" type="center" %}
 {% include feature_row id="featr_code" %}
-{% include feature_row id="separator" type="center" %}
+{% include feature_row id="sep_texts" type="center" %}
 {% include feature_row id="featr_texts" %} 
