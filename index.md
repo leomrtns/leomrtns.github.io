@@ -92,7 +92,7 @@ featr_suppl:
     btn_label: "github repository"
   - image_path: /assets/images/logo_ucatest.png
     alt: "UCA test bias"
-    title: "Homology tests from trees"
+    title: "Tree homology tests"
     excerpt: "Critical evaluation of tree-based homology inference"
     url: "https://bitbucket.org/leomrtns/uca-test-bias"
     btn_class: "btn--warning btn--small"
