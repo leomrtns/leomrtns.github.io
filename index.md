@@ -2,7 +2,6 @@
 layout: splash
 permalink: /
 header:
-  title:""
   overlay_color: "#5e616c"
   overlay_image: /assets/images/mm-home-page-feature.jpg
 excerpt: "Computational Biologist. Bioinformatician at the Quadram Institute Biosciences."
