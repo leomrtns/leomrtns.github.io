@@ -8,7 +8,7 @@ excerpt: "Computational Biologist"
 intro: 
   - excerpt: "Below you will find links to other pages with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software."
 title_code:
-  - title: "Software and Code"
+  <!-- - title: "Software and Code" -->
   - excerpt: "Full packages or code collections I've developed; most are published, while a few are still under development"
 featr_code:
   - image_path: /assets/images/logo_guenomu.png
@@ -54,8 +54,8 @@ featr_code:
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
 title_texts: 
-  - title: "Documentation and Texts"
-  - excerpt: "Below are a few documentation pages and compilations of posts I've been writting. 
+  <!-- - title: "Documentation and Texts" -->
+  - excerpt: "Below are a few documentation pages and compilations of posts I've been writting." 
 featr_texts:
   - image_path: /assets/images/logo_araiguma.png
     alt: "notebooks"
