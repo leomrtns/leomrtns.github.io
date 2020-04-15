@@ -7,14 +7,11 @@ header:
 excerpt: "Computational Biologist"
 intro: 
   - excerpt: "Below you will find links to other pages with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software."
-feature_row:
-  - image_path: /assets/images/logo_araiguma.png
-    alt: "notebooks"
-    title: "Notebooks"
-    excerpt: "Project with technical notes on bioinformatics algorithms and implementations"
-    url: "https://leomrtns.github.io/notebooks"
-    btn_class: "btn--primary btn--small"
-    btn_label: "Notebooks webpage"
+title_code:
+  - title: "Software and Code{: .notice--primary}"
+  - excerpt: "Full packages or code collections I've developed; most are published, while a few are
+    still under development"
+featrow_code:
   - image_path: /assets/images/logo_guenomu.png
     alt: "guenomu"
     title: "Guenomu"
@@ -43,13 +40,6 @@ feature_row:
     url: "https://github.com/quadram-institute-bioscience/biomcmc-lib"
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
-  - image_path: /assets/images/logo_biomcmc.png
-    alt: "biomcmc-libdocs"
-    title: "biomcmc-lib API"
-    excerpt: "Doxygen documentation for employing biomcmc-lib source code"
-    url: "https://leomrtns.github.io/doxygen-biomcmclib"
-    btn_class: "btn--primary btn--small"
-    btn_label: "API documentation page"
   - image_path: /assets/images/logo_superdistance.png
     alt: "super_distance"
     title: "Super Distance"
@@ -64,7 +54,28 @@ feature_row:
     url: "https://github.com/leomrtns/recomb-biomc2"
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
+title_texts: 
+  - title: "Documentation and Texts{: .notice--info}"
+  - excerpt: "Below are a few documentation pages and compilations of posts I've been writting. 
+featrow_texts:
+  - image_path: /assets/images/logo_araiguma.png
+    alt: "notebooks"
+    title: "Notebooks"
+    excerpt: "Project with technical notes on bioinformatics algorithms and implementations"
+    url: "https://leomrtns.github.io/notebooks"
+    btn_class: "btn--info btn--small"
+    btn_label: "Notebooks webpage"
+  - image_path: /assets/images/logo_biomcmc.png
+    alt: "biomcmc-libdocs"
+    title: "biomcmc-lib API"
+    excerpt: "Doxygen documentation for employing biomcmc-lib source code"
+    url: "https://leomrtns.github.io/doxygen-biomcmclib"
+    btn_class: "btn--info btn--small"
+    btn_label: "API documentation page"
 ---
-{% include feature_row id="intro" type="center" %}
 <!--{% include feature_row id="feature_row" type="left" %} -->
-{% include feature_row id="feature_row" %}
+{% include feature_row id="intro" type="center" %}
+{% include feature_row id="title_code" type="center" %}
+{% include feature_row id="featr_code" %}
+{% include feature_row id="title_texts" type="center" %}
+{% include feature_row id="featr_texts" %}
