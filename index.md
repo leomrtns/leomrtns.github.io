@@ -8,9 +8,6 @@ excerpt: "Computational Biologist"
 intro: 
   - excerpt: "Below you will find links to other pages with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software."
 
-sep_code:
-  - image_path: /assets/images/h_separator.png
-    excerpt: '<h1 class="notice--primary">Software and code </h1>'
 featr_code:
   - image_path: /assets/images/logo_guenomu.png
     alt: "guenomu"
@@ -55,9 +52,6 @@ featr_code:
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
 
-sep_texts:
-  - image_path: /assets/images/h_separator.png
-    excerpt: '<h1 class="notice--info">Documentation and Texts</h1>'
 featr_texts:
   - image_path: /assets/images/logo_araiguma.png
     alt: "notebooks"
@@ -81,9 +75,6 @@ featr_texts:
     btn_class: "btn--info btn--small"
     btn_label: "read blog posts"
 
-sep_suppl:
-  - image_path: /assets/images/h_separator.png
-    excerpt: '<h1 class="notice--warning">Supplementary analyses for manuscripts</h1>'
 featr_suppl:
   - image_path: /assets/images/logo_salmobiofilm.png
     alt: "Salmonella biofilm"
@@ -99,7 +90,23 @@ featr_suppl:
     url: "https://github.com/quadram-institute-bioscience/70S-resolution"
     btn_class: "btn--warning btn--small"
     btn_label: "github repository"
+  - image_path: /assets/images/logo_ucatest.png
+    alt: "UCA test bias"
+    title: "Homology tests from trees"
+    excerpt: "Critical evaluation of tree-based homology inference"
+    url: "https://bitbucket.org/leomrtns/uca-test-bias"
+    btn_class: "btn--warning btn--small"
+    btn_label: "bitbucket repository"
 
+sep_code:
+  - image_path: /assets/images/h_separator.png
+    excerpt: '<b class="notice--primary">Software and code</b> based'
+sep_texts:
+  - image_path: /assets/images/h_separator.png
+    excerpt: '<b class="notice--info">Documentation and Texts</b>'
+sep_suppl:
+  - image_path: /assets/images/h_separator.png
+    excerpt: '<b class="notice--warning">Supplementary analyses for manuscripts</b>'
 ---
 
 {% include feature_row id="intro" type="center" %}
