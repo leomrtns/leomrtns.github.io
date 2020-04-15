@@ -7,9 +7,9 @@ header:
 excerpt: "Computational Biologist"
 intro: 
   - excerpt: "Below you will find links to other pages with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software."
-title_code:
-  <!-- - title: "Software and Code" -->
-  - excerpt: "Full packages or code collections I've developed; most are published, while a few are still under development"
+<!-- title_code: -->
+<!--   - title: "Software and Code" -->
+<!--   - excerpt: "Full packages or code collections I've developed; most are published, while a few are still under development" -->
 featr_code:
   - image_path: /assets/images/logo_guenomu.png
     alt: "guenomu"
@@ -74,7 +74,7 @@ featr_texts:
 ---
 <!--{% include feature_row id="feature_row" type="left" %} -->
 {% include feature_row id="intro" type="center" %}
-{% include feature_row id="title_code" type="center" %}
+<!--{% include feature_row id="title_code" type="center" %} --> 
 {% include feature_row id="featr_code" %}
 <!--{% include feature_row id="title_texts" type="center" %}
 {% include feature_row id="featr_texts" %} -->
