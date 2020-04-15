@@ -54,7 +54,6 @@ featr_code:
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
 title_texts: 
-  <!-- - title: "Documentation and Texts" -->
   - excerpt: "Below are a few documentation pages and compilations of posts I've been writting." 
 featr_texts:
   - image_path: /assets/images/logo_araiguma.png
@@ -71,10 +70,16 @@ featr_texts:
     url: "https://leomrtns.github.io/doxygen-biomcmclib"
     btn_class: "btn--info btn--small"
     btn_label: "API documentation page"
+  - image_path: /assets/images/logo_biomcmc_blog.png
+    alt: "biomcmc-blog"
+    title: "bioMCMC blog"
+    excerpt: "Old blog for phylogenetics discussions"
+    url: "http://biomcmc.blogspot.com"
+    btn_class: "btn--info btn--small"
+    btn_label: "read blog posts"
 ---
 <!--{% include feature_row id="feature_row" type="left" %} -->
-{% include feature_row id="intro" type="center" %}
 <!--{% include feature_row id="title_code" type="center" %} --> 
 {% include feature_row id="featr_code" %}
-<!--{% include feature_row id="title_texts" type="center" %}
-{% include feature_row id="featr_texts" %} -->
+{% include feature_row id="title_texts" type="center" %}
+{% include feature_row id="featr_texts" %}
