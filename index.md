@@ -2,9 +2,10 @@
 layout: splash
 permalink: /
 header:
+  title:""
   overlay_color: "#5e616c"
   overlay_image: /assets/images/mm-home-page-feature.jpg
-excerpt: "Computational Biologist"
+excerpt: "Computational Biologist. Bioinformatician at the Quadram Institute Biosciences."
 intro: 
   - excerpt: "Below you will find links to other pages with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software."
 
@@ -98,21 +99,21 @@ featr_suppl:
     btn_class: "btn--warning btn--small"
     btn_label: "bitbucket repository"
 
-sep_code:
+separ_code:
   - image_path: /assets/images/h_separator.png
-    excerpt: '<b class="notice--primary">Software and code</b> based'
-sep_texts:
+    excerpt: '<b class="notice--primary">Software and code</b>'
+separ_texts:
   - image_path: /assets/images/h_separator.png
     excerpt: '<b class="notice--info">Documentation and Texts</b>'
-sep_suppl:
+separ_suppl:
   - image_path: /assets/images/h_separator.png
     excerpt: '<b class="notice--warning">Supplementary analyses for manuscripts</b>'
 ---
 
 {% include feature_row id="intro" type="center" %}
-{% include feature_row id="sep_code" type="center" %}
+{% include feature_row id="separ_code" type="center" %}
 {% include feature_row id="featr_code" %}
-{% include feature_row id="sep_texts" type="center" %}
-{% include feature_row id="featr_texts" %} 
-{% include feature_row id="sep_suppl" type="center" %}
+{% include feature_row id="separ_suppl" type="center" %}
 {% include feature_row id="featr_suppl" %} 
+{% include feature_row id="separ_texts" type="center" %}
+{% include feature_row id="featr_texts" %} 
