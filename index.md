@@ -7,6 +7,7 @@ header:
 excerpt: "Computational Biologist"
 intro: 
   - excerpt: "Below you will find links to other pages with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software."
+
 featr_code:
   - image_path: /assets/images/logo_guenomu.png
     alt: "guenomu"
@@ -50,6 +51,7 @@ featr_code:
     url: "https://github.com/leomrtns/recomb-biomc2"
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
+
 featr_texts:
   - image_path: /assets/images/logo_araiguma.png
     alt: "notebooks"
@@ -72,8 +74,12 @@ featr_texts:
     url: "http://biomcmc.blogspot.com"
     btn_class: "btn--info btn--small"
     btn_label: "read blog posts"
+
+separator:
+  - image_path: /assets/images/h_separator.png
 ---
-<!--{% include feature_row id="feature_row" type="left" %} -->
+
 {% include feature_row id="intro" type="center" %}
 {% include feature_row id="featr_code" %}
+{% include feature_row id="separator" type="center" %}
 {% include feature_row id="featr_texts" %} 
