@@ -46,38 +46,9 @@
     <section>
       <h3>Overview</h3>
       <ul>
-        <li class="fragment"> peroba_database
-        <li class="fragment"> peroba_backbone
-        <li class="fragment"> peroba_report 
+        <li class="fragment"> COGUK official software
+        <li class="fragment"> peroba (database, backbone, and report)
       </ul>
-      <br><br>
-    </section>
-
-    <section>
-      <h4>peroba_database</h4>
-      <ul class="fragment">
-          <li> Input tables: <a target="_blank"  href="008.metadata_coguk_0503.html">Pandas notebook</a>
-          <li> Output HTML: <a target="_blank"  href="perobaDB.0730.html">pandas_profiling</a>
-          <li> <a target="_blank"  href="htm://github.com/quadram-institute-bioscience/peroba">peroba on github</a>
-      </ul>
-      <br><br>
-      <font size="5"><ul class="fragment">
-          <li> phylogenetic tree and timetree
-      </ul></font>
-    </section>
-
-    <section>
-      <h4>NextStrain workflow</h4>
-      <ul class="fragment">
-          <li> <a target="_blank" href="https://github.com/nextstrain">https://github.com/nextstrain</a>
-          <li> Auspice, Augur, nCoV  
-      </ul>
-      <br><br>
-      <font size="5"><ul class="fragment">
-          <li> <a target="_blank" href="https://github.com/nextstrain/ncov">https://github.com/nextstrain/ncov</a>
-          <li> needs sequence <i>and metadata</i> from GISAID
-          <li> Filtering, MAFFT + IQTREE, treetime
-      </ul></font>
     </section>
 
     <section>
@@ -87,14 +58,93 @@
           <li> <a target="_blank" href="https://github.com/cov-ert">https://github.com/cov-ert</a>
           <li> <a target="_blank" href="https://github.com/cov-lineages">https://github.com/cov-lineages</a>
       </ul>
+      <br><br>
+      <font size="5"><ul class="fragment">
+          <li> <a target="_blank" href="civet/civet_report.html">Example of a civet report</a>
+          <li class="fragment"> limitations: sequence-based; local trees defined <i>a priori</i> 
+      </ul></font>
     </section>
-
   </section> <!-- objectives and review -->
 
+  <section><!-- database -->
+    <h4>peroba_database</h4>
+    <section>
+      <img width="80%" src="pictures/peroba_database.png"><br>
+    </section>
+
+    <section>
+			<ul>
+        <li> <a target="_blank" href="tutorial/023.peroba_pipeline.html">Peroba Tutorial</a>
+      </ul>
+      <br><br>
+      <font size="5"><ul class="fragment">
+      	<li> Input tables: <a target="_blank" href="008.metadata_coguk_0503.html">Pandas notebook</a>
+      	<li> Output HTML: <a target="_blank" href="perobaDB.0730.html">pandas_profiling</a>
+      </ul></font>
+    </section>
+  </section><!-- database -->
+
+  <section><!-- backbone-->
+    <h4>peroba_backbone</h4>
+    <section>
+      <img width="80%" src="pictures/peroba_backbone.png"><br>
+    </section>
+
+    <section>
+      <pre><code data-noescape>
+    trim_sequences(trim=[265, 29675]) # 
+    snpsites_from_alignment() # some functions work with SNPs only
+    remove_low_quality() # sequences with excess "N"
+    remove_duplicates() # remove identical sequences
+    reduce_redundancy() # remove sequences with same metadata
+    find_neighbours_ball(blocks = 1500, dist_blocks = 3, nn = 5)
+    find_neighbours_paf (blocks = 2000, n_segments = 1, nn = 10)
+    rapidnj_from_alignment() # crude tree estimate
+      </code></pre>
+      <br><br>
+			<ul class="fragment">
+        <li> Trees can then be optimised with <em>fasttree</em> and <em>iqtree</em>
+      </ul>
+    </section>
+  </section> <!-- backbone -->
+
+  <section><!-- report -->
+    <h4>peroba_report</h4>
+    <section>
+      <img width="80%" src="pictures/peroba_report.png"><br>
+    </section>
+
+    <section>
+      Ancestral reconstruction of: 
+      <ul>
+          <li> internal nodes, for clustering
+					<li> tips, for sequences not classified 
+      </ul>
+			<br>
+    	<img class="fragment" width="49%" src="pictures/pasr006.png">
+    	<img class="fragment" width="49%" src="pictures/pasr001.png">
+    </section>
+
+    <section>
+      <ul>
+      	<li> <a target="_blank" href="0716/report_2020-07-16.html">Example of a peroba report</a>
+        <li> <a target="_blank" href="tutorial/200710.civet_comparison.html">Comparison with civet</a>
+      </ul>
+    </section>
+  </section> <!-- report -->
+
   <section>
-    <h4>Thank you!</h4>
+    <h4>The software</h4>
     <br>
-    <img width="70%" src="pictures/smbc091.png"><br>
+		<ul>
+    	<li> <a target="_blank" href="tutorial/023.peroba_pipeline.html">Peroba Tutorial</a>
+    	<li> <a target="_blank"  href="htm://github.com/quadram-institute-bioscience/peroba">peroba on github</a>
+      </ul>
+  </section>
+
+  <section>
+    <br>
+    <img width="80%" src="pictures/smbc091.png"><br>
   </section>
 
 

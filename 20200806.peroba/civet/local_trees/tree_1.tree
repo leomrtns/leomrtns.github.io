@@ -1,0 +1,8 @@
+#NEXUS
+Begin Taxa;
+ Dimensions NTax=7;
+ TaxLabels ZW-168_S97 ZW-214_S99 ZW-149_S192 inserted_node1 England/LIVE-A5DE8/2020 England/LIVE-A61EB/2020 inserted_node0;
+End;
+Begin Trees;
+ Tree tree1=(((ZW-168_S97:0.00000,(ZW-214_S99:0.00000,ZW-149_S192:0.00000):0.00000):0.00007,(inserted_node1:0.00000,(England/LIVE-A5DE8/2020:0.00003,England/LIVE-A61EB/2020:0.00000):0.00003):0.00000):0.00003,inserted_node0:0.00000):0.00000;
+End;

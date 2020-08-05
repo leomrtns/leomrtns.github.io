@@ -1,0 +1,8 @@
+#NEXUS
+Begin Taxa;
+ Dimensions NTax=7;
+ TaxLabels ZW-1478B_S136 ZW-1479B_S138 ZW-8694_S171 inserted_node2 Wales/PHWC-15DBB7/2020 inserted_node1 inserted_node0;
+End;
+Begin Trees;
+ Tree tree1=((((ZW-1478B_S136:0.00000,(ZW-1479B_S138:0.00000,ZW-8694_S171:0.00000):0.00000):0.00011,(inserted_node2:0.00003,Wales/PHWC-15DBB7/2020:0.00000):0.00003):0.00003,inserted_node1:0.00003):0.00003,inserted_node0:0.00000):0.00000;
+End;

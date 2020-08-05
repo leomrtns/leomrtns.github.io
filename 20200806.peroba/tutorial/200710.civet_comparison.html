@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2020-07-10" />
+  <title>2020.07.10 — Comparison between CIVET and PEROBA uk_lineage classification</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="pandoc.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">2020.07.10 — Comparison between CIVET and PEROBA uk_lineage classification</h1>
+<p class="date">2020-07-10</p>
+</header>
+<p>I noticed that some local sequences had disagreeing classification between <a href="https://github.com/COG-UK/civet">civet</a> and <a href="https://github.com/quadram-institute-bioscience/peroba">peroba</a>, and decided to see which was more correct. Fortunately for each UK_lineage the phylogenetics pipeline generates an alignment and a tree. Therefore, for each set of potential uk_lineages for a given sample, we can merge their (aligned) sequences and see where where in the tree the sample would go (after a profile alignment against the provided alignment).</p>
+<p>As a reminder, <code>civet</code> reports the closest sequence in the COGUK database to each sample, while <code>peroba</code> reports a parsimony reconstructed state based on the sequences closest on the tree. In all fairness <code>civet</code> is not a tool for UK_lineage classification but for visualisation — they use the closest neighbour as a “seed” to chose which leaves to show on the tree.</p>
+<h2 id="details">Details</h2>
+<p>For all samples where there is disagreement between the classifications I ran a full phylogenetic analysis (subsampling large lineages by hand or using iqtree PD mode), including the query sample. By visual inspection I could see which is the most likely lineage. In total there is one case where peroba failed (by refusing to assign a lineage), 5 cases where civet failed, and 2 inconclusive cases, where peroba was better but it wasn’t a clear-cut scenario.</p>
+<h3 id="complex-scenarios">complex scenarios</h3>
+<p>An interesting case is <code>NORW-EE475</code> where we may be observing a paraphyly on clade UK31: it appears sister to NORW-ECDB8, which is UK339. However both are within UK31 (therefore UK31 is not monophyletic). This indicates that the UK_lineage classification of <code>NORW-ECDB8</code> as UK339 by the COGUK pipeline may be wrong (or that there is some masking in the COGUK pipeline not captured here) <img src="200710.figures/EE475.png" /></p>
+<p><br> Another interesting case is <code>NORW-EEC6E</code>: it belongs to same patient as <code>NORW-ED36A</code> which has been classified as UK42 (favouring peroba classification). However if we neglect the patient history and just look at the tree, then it is closer to UK199 as inferred by civet. This is because there is a good amount of paraphyly: in the figure below the blue clade show a UK42 within a UK199 cluster, and the yellow clades show a UK199 below an otherwise UK42 clade. <img src="200710.figures/EEC6E.png" /></p>
+<p><br></p>
+<h3 id="other-comparisons">other comparisons</h3>
+<p>Below we show simpler cases, starting by the two sets where peroba inferred correctly the UK lineage: <code>EE220</code> and <code>EE4EE</code> were inferred as UK509 by peroba but as UK5 by civet. <img src="200710.figures/EE220_EE4EE.png" /></p>
+<p><br> And <code>EE299</code>, <code>EE42A</code>, and <code>EE4A2</code> which were classified as UK2735 by peroba but (again) as UK5 by civet. UK5 seems to be a placeholder lineage (quite long branches, maybe due to partially ambiguous sites?)… <img src="200710.figures/EE299_EE42A_EE4A2.png" /></p>
+<p><br> And finally the one case where peroba failed to find the closest lineage, <code>ED7C8</code>. I tried with different subsamplings and sometimes it did clustered with the wrong lineage. More importantly the classification given by peroba is <code>UK4/UK72/UK5676</code> which means that it could not classify with certainty (when there are several possible assignments, I take only the first three, which indicates uncertainty) <img src="200710.figures/ED7C8.png" /></p>
+<h2 id="table">Table</h2>
+<p>A table with the peroba and civet classifications for all sequences on this run is shown below. I also added a few columns indicating if they disagree, and ultimately (after the full phylogenetic analysis) which classification is better. and why.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">peroba_uk_lineage</th>
+<th style="text-align: left;">civet uk_lineage</th>
+<th style="text-align: left;">disagreement</th>
+<th style="text-align: left;">peroba_lineage</th>
+<th style="text-align: left;">peroba_phylotype</th>
+<th style="text-align: left;">central_sample_id</th>
+<th style="text-align: left;">collection_date</th>
+<th style="text-align: left;">patient_group</th>
+<th style="text-align: left;">which is better</th>
+<th style="text-align: right;">comment (from tree)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">UK4/UK72/UK5676</td>
+<td style="text-align: left;">UK5663</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">UK240_1/UK120_1.3/UK40_1.1</td>
+<td style="text-align: left;">NORW-ED7C8</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">civet</td>
+<td style="text-align: right;">closer to 5663, not far from 5676</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK12</td>
+<td style="text-align: left;">UK12</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1.p11</td>
+<td style="text-align: left;">UK12_1.3</td>
+<td style="text-align: left;">NORW-EE3C3</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UK339</td>
+<td style="text-align: left;">UK31</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;">B.3</td>
+<td style="text-align: left;">UK339_1.5</td>
+<td style="text-align: left;">NORW-EE475</td>
+<td style="text-align: left;">2020-06-23</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Peroba</td>
+<td style="text-align: right;">closest in tree to UK339 but both within UK31 clade</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK712</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">NORW-EEB61</td>
+<td style="text-align: left;">2020-06-28</td>
+<td style="text-align: left;">NORW-ED85C</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">patient_group not classified</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UK6</td>
+<td style="text-align: left;">UK6</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1</td>
+<td style="text-align: left;">UK6_1.1</td>
+<td style="text-align: left;">NORW-EE27B</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK6</td>
+<td style="text-align: left;">UK6</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1</td>
+<td style="text-align: left;">UK6_1.1.1</td>
+<td style="text-align: left;">NORW-EE2B7</td>
+<td style="text-align: left;">2020-04-23</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UK6</td>
+<td style="text-align: left;">UK6</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1</td>
+<td style="text-align: left;">UK6_1.1</td>
+<td style="text-align: left;">NORW-EE554</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK6</td>
+<td style="text-align: left;">UK6</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1</td>
+<td style="text-align: left;">UK6_1.1.1</td>
+<td style="text-align: left;">NORW-EE800</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UK199</td>
+<td style="text-align: left;">UK199</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1.5.5</td>
+<td style="text-align: left;">UK199_1.1</td>
+<td style="text-align: left;">NORW-EE24E</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK199</td>
+<td style="text-align: left;">UK199</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1.5.5</td>
+<td style="text-align: left;">UK199_1</td>
+<td style="text-align: left;">NORW-EE2E4</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UK199</td>
+<td style="text-align: left;">UK199</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1.5.5</td>
+<td style="text-align: left;">UK199_1</td>
+<td style="text-align: left;">NORW-EE369</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK199</td>
+<td style="text-align: left;">UK199</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1.5.5</td>
+<td style="text-align: left;">UK199_1.1</td>
+<td style="text-align: left;">NORW-EE41B</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UK42</td>
+<td style="text-align: left;">UK199</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;">B.1</td>
+<td style="text-align: left;">UK42_1</td>
+<td style="text-align: left;">NORW-EEC6E</td>
+<td style="text-align: left;">2020-06-29</td>
+<td style="text-align: left;">NORW-ED36A</td>
+<td style="text-align: left;">peroba</td>
+<td style="text-align: right;">patient_group is UK42 but sequence closer to UK199</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK2735</td>
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;">B.1.1</td>
+<td style="text-align: left;">UK2735_1.17.1</td>
+<td style="text-align: left;">NORW-EE299</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">peroba</td>
+<td style="text-align: right;">flatly within UK2735</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1.1</td>
+<td style="text-align: left;">UK5_1.285</td>
+<td style="text-align: left;">NORW-EE30F</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1.1</td>
+<td style="text-align: left;">UK5_1.1</td>
+<td style="text-align: left;">NORW-EE4DF</td>
+<td style="text-align: left;">2020-06-25</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UK2735</td>
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;">B.1.1</td>
+<td style="text-align: left;">UK2735_1.17</td>
+<td style="text-align: left;">NORW-EE42A</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">peroba</td>
+<td style="text-align: right;">flatly within UK2735</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK2735</td>
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;">B.1.1</td>
+<td style="text-align: left;">UK2735_1.17.1</td>
+<td style="text-align: left;">NORW-EE4A2</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">peroba</td>
+<td style="text-align: right;">flatly within UK2735</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1.1</td>
+<td style="text-align: left;">UK5_1.202.1</td>
+<td style="text-align: left;">NORW-EE23F</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1.1</td>
+<td style="text-align: left;">UK5_1.202.1</td>
+<td style="text-align: left;">NORW-EE40C</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1.1</td>
+<td style="text-align: left;">UK5_1.202.1</td>
+<td style="text-align: left;">NORW-EE439</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK509</td>
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;">B.1.1</td>
+<td style="text-align: left;">UK509_1</td>
+<td style="text-align: left;">NORW-EE4EE</td>
+<td style="text-align: left;">2020-04-23</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">peroba</td>
+<td style="text-align: right;">flatly within UK509</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UK509</td>
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;">YES</td>
+<td style="text-align: left;">B.1.1</td>
+<td style="text-align: left;">UK509_1</td>
+<td style="text-align: left;">NORW-EE220</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">peroba</td>
+<td style="text-align: right;">flatly within UK509</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1.1</td>
+<td style="text-align: left;">UK5_1.3.1</td>
+<td style="text-align: left;">NORW-EE69D</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1.1</td>
+<td style="text-align: left;">UK5_1.221</td>
+<td style="text-align: left;">NORW-EE26C</td>
+<td style="text-align: left;">2020-04-23</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1.1</td>
+<td style="text-align: left;">UK5_1.176.1</td>
+<td style="text-align: left;">NORW-EE4FD</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">NORW-EE4C0</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;">UK5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">B.1.1</td>
+<td style="text-align: left;">UK5_1</td>
+<td style="text-align: left;">NORW-EE545</td>
+<td style="text-align: left;">2020-04-24</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="a-note-on-pairwise-distances">A note on pairwise distances</h2>
+<p>One problem of using pairwise comparisons is that closeness by itself is not a good classification proxy. <!--Silhouette scores and other clustering goodness-of-fit measures use all distances, for instance.  --> One example is given in the figure below, where we have two clusters (lineages), blue and orange. The patristic distance (i.e. the path along the phylogeny) between A and B is smaller than each of them are from any sequence from their own lineages. Therefore if B is the query it would be classified as the same lineage as A, and vice versa.</p>
+<p><img src="200710.figures/patristic.png" /></p>
+<p>What about comparing the sequences directly, instead of looking at the phylogeny? Then besides the problem raised above, we must keep in mind that the pairwise sequence comparison doesn’t know which changes are “relevant” — i.e. which are shared within the lineage and which are ‘spurious’ (homoplasic etc.). Therefore two target sequences equally distant to the query might disagree in important sites. Compounded to this is the fact that sequences have ambigous sites (e.g. <code>N</code>) which are treated as another state by <code>minimap2</code> and friends. Therefore the sequence “closest” to our query might just be the one with the most similar pattern of <code>N</code>s. And unfortunately a dictionary of lineage-defining positions doesn’t seem to be possible to find (this is the so-called <em>perfect phylogeny</em> problem).</p>
+<p>Peroba tries to circumvent this by assigning a lineage to all internal nodes, while allowing for uncertainty (e.g. nodes close to the root…) <!--(that is why all modern phylogenetic methods were developed in the first place!)--></p>
+</body>
+</html>
