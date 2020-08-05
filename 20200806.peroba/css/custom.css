@@ -1,0 +1,40 @@
+.reveal p { font-size: 8; }
+/* http://stackoverflow.com/questions/23082660/transprent-png-in-reveal-js */
+/*.slides img{border:0; opacity:0;} */
+.reveal section img { background:none; border:none; box-shadow:none; }
+
+.box_rotate {
+  -moz-transform: rotate(90deg);  /* FF3.5+ */
+  -o-transform: rotate(90deg);  /* Opera 10.5 */
+  -webkit-transform: rotate(90deg);  /* Saf3.1+, Chrome */
+  filter:  progid:DXImageTransform.Microsoft.BasicImage(rotation=1);  /* IE6,IE7 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)"; /* IE8 */
+}
+
+.reveal .footer {
+  position: absolute;
+  bottom: 1em;
+  right: -1em;
+  font-size: 0.5em;
+}
+
+/*  from css/theme/solarized.css */
+.reveal img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.reveal sub {
+  font-size: smaller;
+} 
+
+.reveal .credit {
+  position: absolute;
+  bottom: -1em;
+  left: 0em;
+  color:rgb(50,70,120);
+  font-size: 0.5em;
+}
+
+
+/*  from css/theme/solarized.css */
