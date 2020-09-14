@@ -65,7 +65,7 @@ featr_code:
     url: "https://github.com/leomrtns/cumaru"
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
-  - image_path: /assets/images/mm-customizable-feature.png
+  - image_path: /assets/images/logo_tatajuba.png
     alt: "tatajuba"
     title: "tatajuba"
     excerpt: "(Experimental) identification and classification of homopolymeric tracts from reads"
