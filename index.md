@@ -46,9 +46,30 @@ featr_code:
     btn_label: "source code on github"
   - image_path: /assets/images/logo_biomc2.png
     alt: "recomb-biomc2"
-    title: "recomb-biomc2"
+    title: "Recomb-biomc2"
     excerpt: "Hiearchical Bayesian Model for Viral Phylogenetic Recombination"
     url: "https://github.com/leomrtns/recomb-biomc2"
+    btn_class: "btn--primary btn--small"
+    btn_label: "source code on github"
+  - image_path: /assets/images/mm-customizable-feature.png
+    alt: "peroba"
+    title: "Peroba"
+    excerpt: "Phylogenetic exploration of SARS-CoV-2 sequences"
+    url: "https://github.com/quadram-institute-bioscience/peroba"
+    btn_class: "btn--primary btn--small"
+    btn_label: "source code on github"
+  - image_path: /assets/images/logo_cumaru.png
+    alt: "cumaru"
+    title: "Cumaru"
+    excerpt: "(Experimental) multiple sequence alignment based on kalign3"
+    url: "https://github.com/leomrtns/cumaru"
+    btn_class: "btn--primary btn--small"
+    btn_label: "source code on github"
+  - image_path: /assets/images/mm-customizable-feature.png
+    alt: "tatajuba"
+    title: "tatajuba"
+    excerpt: "(Experimental) identification and classification of homopolymeric tracts from reads"
+    url: "https://github.com/quadram-institute-bioscience/tatajuba"
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
 
