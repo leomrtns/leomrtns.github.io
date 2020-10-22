@@ -1,8 +1,0 @@
-#NEXUS
-Begin Taxa;
- Dimensions NTax=4;
- TaxLabels ZW-169_S98 inserted_node1 Scotland/CVR1400/2020 inserted_node0;
-End;
-Begin Trees;
- Tree tree1=(ZW-169_S98:0.00011,((inserted_node1:0.00003,Scotland/CVR1400/2020:0.00003):0.00000,inserted_node0:0.00007):0.00000):0.00000;
-End;

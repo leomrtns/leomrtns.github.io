@@ -1,8 +1,0 @@
-#NEXUS
-Begin Taxa;
- Dimensions NTax=4;
- TaxLabels ZW-162_S96 inserted_node1 England/NORT-283917/2020 inserted_node0;
-End;
-Begin Trees;
- Tree tree1=(((ZW-162_S96:0.00005,inserted_node1:0.00000):0.00000,England/NORT-283917/2020:0.00000):0.00004,inserted_node0:0.00000):0.00000;
-End;
