@@ -67,9 +67,16 @@ featr_code:
     btn_label: "source code on github"
   - image_path: /assets/images/logo_tatajuba.png
     alt: "tatajuba"
-    title: "tatajuba"
+    title: "Tatajuba"
     excerpt: "(Experimental) identification and classification of homopolymeric tracts from reads"
     url: "https://github.com/quadram-institute-bioscience/tatajuba"
+    btn_class: "btn--primary btn--small"
+    btn_label: "source code on github"
+  - image_path: /assets/images/logo_uvaia.png
+    alt: "uvaia"
+    title: "Uvaia"
+    excerpt: "Reference-based alignment and search against aligned database" 
+    url: "https://github.com/quadram-institute-bioscience/uvaia"
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
 
