@@ -77,6 +77,14 @@ BTW the tacit answer was "assembly DBG", as [commented later](https://lh3.github
 Maybe this is due to a lack of formal training in Computer Science, where they cannot take apart a data structure
 (abstract concept) from its implementation?
 
+One way of stoping the spread of wrong terms is to publications. Articles are a way of correcting the record, when for
+instance one relies upon another articles abusing the terms at the same time as it uses a proper terminology. However it
+is increasingly common to use the original offending publication as an excuse to use the degenerated term. Two wrongs
+don't make it right. 
+
+--> this contributes to lack of conversation betweeen binfies (dont care about terms) and the more bio folks they're
+supposed to help (leading to speciation, lack of talk). So to bridge the gap we need to keep terminology correct.
+
 ###
 
 Recently another aspect of shallow knowledge is when you review a paper: if you've heard of many packages and many fancy
