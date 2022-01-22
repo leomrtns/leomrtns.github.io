@@ -39,6 +39,10 @@ where a simple message spreads faster than a complex one (even when the simpler 
 There is a large gradient between "shallow" knowledge and "deep" knowledge, where we all fall somewhere in between for
 every aspects of our fields. 
 I focus mainly on the shallow extreme, following the Anna Karenina principle.
+This question has been around for a while: https://plato.stanford.edu/entries/episteme-techne
+
+It is the differnce between knowing and understanding according to Feynman https://www.youtube.com/watch?v=NM-zWTU7X-k
+which ultimately is Francis Bacon's inductivism contribution to the Scientific method.
 
 
 In short, we are increasingly using the wrong terminology and expandind methodologies when they are not appropriate.
@@ -61,6 +65,11 @@ the term, you can change its meaning without feeling the consequences. E.g. "cla
 saying "clade B is not clade A" will make it harder for students to grasp the term.
 A [recent tweet](https://twitter.com/leomrtns/status/1369437415388102663) made me think about this again. 
 
+There is [a recent paper](https://www.nature.com/articles/s41588-021-00873-4) describing how "widespread but 
+inconsistent" usage of terminology has led to confusion in
+scRNA-seq, one example being "missing data" which does not agree with its statistical definition.
+On the same day I saw [a tweet](https://twitter.com/hjpimentel/status/1397371882450554881) commenting on another one,
+about "unbiased" protocols. 
 
 Btw you don't need to be from the field to car about the proper terms. In fact that is the reason why we have to respect
 definitions: I don't need to be a graph theorist to know that a De Bruijn graph has edges between all neighbours, but if
@@ -76,6 +85,9 @@ asking?)
 BTW the tacit answer was "assembly DBG", as [commented later](https://lh3.github.io/2017/11/15/on-assembly-de-bruijn-graphs).
 Maybe this is due to a lack of formal training in Computer Science, where they cannot take apart a data structure
 (abstract concept) from its implementation?
+BTW I also realised that what I call Computer Science some people call Mathematics since maybe nowadays CS is more
+focused on programming languages, software, etc. which I am used to call "software engineering".
+
 
 One way of stoping the spread of wrong terms is to publications. Articles are a way of correcting the record, when for
 instance one relies upon another articles abusing the terms at the same time as it uses a proper terminology. However it
