@@ -37,7 +37,7 @@ This example is closer to politics, where disinformation tactics are used, but w
 where a simple message spreads faster than a complex one (even when the simpler message is wrong). 
 
 There is a large gradient between "shallow" knowledge and "deep" knowledge, where we all fall somewhere in between for
-every aspects of our fields. 
+every aspect of our fields. 
 I focus mainly on the shallow extreme, following the Anna Karenina principle.
 This question has been around for a while: https://plato.stanford.edu/entries/episteme-techne
 
@@ -88,7 +88,6 @@ Maybe this is due to a lack of formal training in Computer Science, where they c
 BTW I also realised that what I call Computer Science some people call Mathematics since maybe nowadays CS is more
 focused on programming languages, software, etc. which I am used to call "software engineering".
 
-
 One way of stoping the spread of wrong terms is to publications. Articles are a way of correcting the record, when for
 instance one relies upon another articles abusing the terms at the same time as it uses a proper terminology. However it
 is increasingly common to use the original offending publication as an excuse to use the degenerated term. Two wrongs
@@ -110,6 +109,11 @@ evolutionary process, and therefore a distinct alignemt is equivalent to a disct
 models accounting for it).
 Still it may be hard to convince them, since there are not many papers explicitly saying this. 
 
-
-
-###
+### The XY problem 
+A related issue has been the assumption that everything is an XY problem, as exemplified in Q&A forums where the
+responder tries to rewrite the question in a way they can answer, tacitly assuming their failure to answer must be the
+OP's fault. 
+It is true that it is common that the questions are badly formulated, but a charitable reading goes a long way. This is
+a case of Cunningham's Law. 
+I am old enough to remember the incivility of the <mailing lists> and how Stack Overflow (and other modern forums) was a game changer in terms of
+helpful answers.
