@@ -14,7 +14,7 @@ to justify his own malfeasance.
 This is a quote about compassion, for since we are all humans we should not be too quick in judging others.
 It seemed obvious to me that it does not work both ways: I can forgive you, but you can't use the same logic to forgive
 yourself.
-Modern life becomes lighter if we forego this symmetry: we can be harsh to ourselves and kind to others.
+Modern life becomes lighter if we forego this symmetry: we can be strict to ourselves and kind to others.
 
 ## Shallow and deep understanding
 
@@ -44,10 +44,23 @@ find.
 
 Even MLST (multi-locus sequence typing), that historically is an amplicon-based classification of a few housekeeping
 genes, is slowly evolving into any multi-locus based classification. However cgMLST, wgMLST, and rMLST are all
-whole-genome based (they are a side-effect of the sequencing, since they use only a small fraction of the genomic
-information, in contrast with the original MLST which were the main outcome of the sequencing). 
+whole-genome based (they are a side-effect of the sequencing, since they use only a fraction of the genomic
+information, in contrast with the original MLST which was the main outcome of the sequencing). 
 
 There is nothing intrinsically wrong with any of these new uses of the terms, but it's always good if we remember their
 history. 
 Because sometimes we may need to distinguish them (and maybe avoid reinventing the wheel?), it may help review a
 manuscript with less prejudice, and it may point to a deeper understanding of the subject.
+
+### Reinventing the wheel
+Speaking of "reinventing the wheel", I [suggested recently](https://twitter.com/leomrtns/status/1487837758706040836)
+that we are bad at identifying novelty if we are not very familiar with the subject.
+And this is also a problem of asymmetry, since we are better at judging (and therefore avoiding) if we are
+reinventing something obvious, than we are at passing judgement over other people's attempts.
+Therefore if you feel tempted to disencourage someone since it seems to you to be something obvious, provide them
+instead with references of what you think does the same, and suggest them to take a look, and compare. 
+
+" Telling a programmer there's already a library to do X is like telling a songwriter there's already a
+song about love. -- Pete Cordell",
+
+"The best programs are the ones written when the programmer is supposed to be working on something else." - Melinda Varian
