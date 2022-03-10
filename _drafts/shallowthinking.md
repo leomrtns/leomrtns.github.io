@@ -113,7 +113,14 @@ Still it may be hard to convince them, since there are not many papers explicitl
 A related issue has been the assumption that everything is an XY problem, as exemplified in Q&A forums where the
 responder tries to rewrite the question in a way they can answer, tacitly assuming their failure to answer must be the
 OP's fault. 
-It is true that it is common that the questions are badly formulated, but a charitable reading goes a long way. This is
-a case of Cunningham's Law. 
+It is true that it is not uncommon to find badly formulated questions, but a charitable reading goes a long way. This is
+a case of Cunningham's Law.
+As [Paul Krugman said](https://web.mit.edu/krugman/www/ricardo.htm),
+
+```
+In scholarly discourse, it is a normal courtesy to give one's debating opponents the benefit of the doubt. If they say something that seems confused, one tries to find a charitable interpretation -- although it may seem that they are saying X, which is patently wrong, perhaps they are merely badly expressing their belief in Y, which could be right in principle (...) 
+```
+
+
 I am old enough to remember the incivility of the <mailing lists> and how Stack Overflow (and other modern forums) was a game changer in terms of
 helpful answers.
