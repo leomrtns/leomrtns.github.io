@@ -31,3 +31,4 @@ my [QIB institutional repository](https://github.com/quadram-institute-bioscienc
 
 [Google scholar](https://scholar.google.co.uk/citations?user=XvcsndkAAAAJ&hl=en) seems to have the most up-to-date info
 about my publications.
+You can also find me on a mastodon server [https://scicomm.xyz/web/@leomrtns](https://scicomm.xyz/web/@leomrtns). 
