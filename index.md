@@ -83,9 +83,9 @@ featr_code:
 featr_texts:
   - image_path: /assets/images/logo_araiguma.png
     alt: "notebooks"
-    title: "Notebooks"
-    excerpt: "Project with technical notes on bioinformatics algorithms and implementations"
-    url: "https://leomrtns.github.io/notebooks"
+    title: "Binfie notes"
+    excerpt: "Blog with technical notes on bioinformatics algorithms and implementations"
+    url: "https://leomrtns.github.io/jupyterblog"
     btn_class: "btn--info btn--small"
     btn_label: "Notebooks webpage"
   - image_path: /assets/images/logo_biomcmc.png
