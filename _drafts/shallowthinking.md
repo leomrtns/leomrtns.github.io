@@ -124,3 +124,15 @@ In scholarly discourse, it is a normal courtesy to give one's debating opponents
 
 I am old enough to remember the incivility of the <mailing lists> and how Stack Overflow (and other modern forums) was a game changer in terms of
 helpful answers.
+
+### definitions
+
+when you say "clonality" do you mean identical or free from recombination? The same thing with "homology". One is
+observational, the other is a conclusion, of which the former is evidence. (actually "clonality" is "from a single
+recent ancestor in the population https://pubmed.ncbi.nlm.nih.gov/15148426/)
+So if you see 100 identity, it's "natural" to start saying homologous (b/c the conclusion follows directly from the
+evidence). However ppl reading (or yourself, after a few papers published) might miss this thread of evidence and start
+using "homology" as a synonym for "identity".
+So it's the same story: if you know the difference or how one usage leads to another then you'll likely mention it
+somewhere to avoied confusion.
+
