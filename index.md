@@ -12,7 +12,7 @@ featr_code:
   - image_path: /assets/images/logo_tatajuba.png
     alt: "tatajuba"
     title: "Tatajuba"
-    excerpt: "(Experimental) identification and classification of homopolymeric tracts from reads"
+    excerpt: "Identification and classification of homopolymeric tracts from reads"
     url: "https://github.com/quadram-institute-bioscience/tatajuba"
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
@@ -86,6 +86,14 @@ featr_code:
     title: "Cumaru"
     excerpt: "(Experimental) multiple sequence alignment based on kalign3"
     url: "https://github.com/leomrtns/cumaru"
+    btn_class: "btn--primary btn--small"
+    btn_label: "source code on github"
+
+  - image_path: /assets/images/logo_curupixa.png
+    alt: "curupixa"
+    title: "Curupixa"
+    excerpt: "(Experimental) thread-safe API-aware C library to supercede biomcmc-lib someday"
+    url: "https://github.com/leomrtns/curupixa"
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
 
