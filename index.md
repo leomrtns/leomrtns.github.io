@@ -165,3 +165,4 @@ separ_suppl:
 {% include feature_row id="featr_suppl" %} 
 {% include feature_row id="separ_texts" type="center" %}
 {% include feature_row id="featr_texts" %} 
+<a rel="me" href="https://mstdn.science/@leomrtns">Mastodon</a>
