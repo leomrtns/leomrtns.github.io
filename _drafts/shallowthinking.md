@@ -136,3 +136,9 @@ using "homology" as a synonym for "identity".
 So it's the same story: if you know the difference or how one usage leads to another then you'll likely mention it
 somewhere to avoied confusion.
 
+###
+the software "Galactica" https://twitter.com/leomrtns/status/1593552546576142340 reminded me of bad reviewers which are
+wrong but very confident ("you cannot use similar SC2 sequences, you must use a random sample")
+
+it seems as people read about something new and feel the need to use all buzzwords even if their combo doesnt make
+sense.

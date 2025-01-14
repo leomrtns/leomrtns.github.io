@@ -59,7 +59,7 @@ plugins:
 author:
   name   : "Leonardo de Oliveira Martins"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Head of Phylogenomics at the Quadram Institute Biosciences, UK. Computational Biology, Evolutionary Genomics. "
+  bio    : "Tenure Track Fellow in Health, University of Liverpool UK. Computational Biology, Evolutionary Genomics. "
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"

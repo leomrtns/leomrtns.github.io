@@ -4,7 +4,7 @@ permalink: /
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/mm-home-page-feature.jpg
-excerpt: "Computational Biologist. Bioinformatician at the Quadram Institute Biosciences."
+excerpt: "Computational Biologist. Tenure Track Fellow in Health at the University of Liverpool. 
 intro: 
   - excerpt: "Below you will find links to other pages with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software."
 
@@ -13,7 +13,7 @@ featr_code:
     alt: "tatajuba"
     title: "Tatajuba"
     excerpt: "Identification and classification of homopolymeric tracts from reads"
-    url: "https://github.com/quadram-institute-bioscience/tatajuba"
+    url: "https://github.com/leomrtns/tatajuba"
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
 
@@ -21,7 +21,7 @@ featr_code:
     alt: "uvaia"
     title: "Uvaia"
     excerpt: "Reference-based alignment and search against aligned database" 
-    url: "https://github.com/quadram-institute-bioscience/uvaia"
+    url: "https://github.com/leomrtns/uvaia"
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
 
@@ -29,7 +29,7 @@ featr_code:
     alt: "super_distance"
     title: "Super Distance"
     excerpt: "Supertree estimation from gene family trees, using matrix representation with distances"
-    url: "https://github.com/quadram-institute-bioscience/super_distance"
+    url: "https://github.com/leomrtns/super_distance"
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
 
@@ -37,7 +37,7 @@ featr_code:
     alt: "peroba"
     title: "Peroba"
     excerpt: "Phylogenetic exploration of SARS-CoV-2 sequences"
-    url: "https://github.com/quadram-institute-bioscience/peroba"
+    url: "https://github.com/leomrtns/peroba"
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
 
@@ -69,7 +69,7 @@ featr_code:
     alt: "biomcmclib"
     title: "biomcmc-lib library"
     excerpt: "C library with low level functions for phylogenetic analyses"
-    url: "https://github.com/quadram-institute-bioscience/biomcmc-lib"
+    url: "https://github.com/leomrtns/biomcmc-lib"
     btn_class: "btn--primary btn--small"
     btn_label: "source code on github"
 
