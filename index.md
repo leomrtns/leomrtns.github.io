@@ -4,7 +4,7 @@ permalink: /
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/mm-home-page-feature.jpg
-excerpt: "Computational Biologist. Tenure Track Fellow in Health at the University of Liverpool. 
+excerpt: "Computational Biologist. Tenure Track Fellow in Health at the University of Liverpool." 
 intro: 
   - excerpt: "Below you will find links to other pages with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software."
 
