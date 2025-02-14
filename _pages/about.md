@@ -17,8 +17,8 @@ and with Phylogenomics at [David Posada's Lab](https://dposada.webs.uvigo.es/) o
 I did my Ph.D. on Bayesian Phylogenetics at the [Laboratory of Biometry and Bioinformatics](http://www.ab.a.u-tokyo.ac.jp/aeb/laboratory/bb_e.html) of the University of Tokyo, 
 under the supervision of [Prof. Hirohisa Kishino](http://lbm.ab.a.u-tokyo.ac.jp/~kishino/).
 
-> Signal Processing Group
-> Dept Electrical Engineering and Electronics
+> Signal Processing Group <br>
+> Dept Electrical Engineering and Electronics <br>
 > University of Liverpool, L69 7ZF
 >  
 > Leonardo.De-Oliveira-Martins (at liverpool.ac.uk)
