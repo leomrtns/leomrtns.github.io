@@ -3,7 +3,7 @@ permalink: /about/
 title: "About me"
 ---
 
-I am a Tenure Track Fellow in Health at the University of Liverpool, UK, working in the 
+I am a [Tenure Track Fellow in Health](https://www.liverpool.ac.uk/people/leonardo-de-oliveira-martins) at the University of Liverpool, UK, working in the 
 [Signal Processing Group](https://www.liverpool.ac.uk/electrical-engineering-and-electronics/research/data-science-signal-processing/signalprocessing/) 
 of the Department of Electrical Engineering and Electronics.
 I am interested in designing Bayesian scalable models for the evolution of genomes and diseases, with special interest in microbes of potential clinical interest.
@@ -21,12 +21,13 @@ under the supervision of [Prof. Hirohisa Kishino](http://lbm.ab.a.u-tokyo.ac.jp/
 > Dept Electrical Engineering and Electronics <br>
 > University of Liverpool, L69 7ZF
 >  
-> Leonardo.De-Oliveira-Martins (at liverpool.ac.uk)
+> Leonardo.de-Oliveira-Martins (at liverpool.ac.uk)
 
-Since we still struggle with international names: my first name is **Leonardo** and my surname/family name is **de Oliveira Martins**. I don't have a middle name.
+Since we struggle with international names: my first name is **Leonardo** and my surname/family name is **de Oliveira Martins**. I don't have a middle name.
 
 You can check my [personal repositories on github](https://github.com/leomrtns) and 
 [on bitbucket](https://bitbucket.org/leomrtns/). 
+My official homepage at the University of Liverpool [is here](https://www.liverpool.ac.uk/people/leonardo-de-oliveira-martins).
 
 [Google scholar](https://scholar.google.co.uk/citations?user=XvcsndkAAAAJ&hl=en) seems to have the most up-to-date info
 about my publications.
