@@ -81,6 +81,9 @@ author:
     - label: "Bluesky"
       icon: "fab fa-bluesky"
       url: "https://bsky.app/profile/leomrtns.bsky.social"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/leomrtns"
 
 footer:
   links:
@@ -99,6 +102,9 @@ footer:
     - label: "Bluesky"
       icon: "fab fa-bluesky"
       url: "https://bsky.app/profile/leomrtns.bsky.social"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/leomrtns"
 
 defaults:
   #_posts
