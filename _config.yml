@@ -68,27 +68,37 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:leomrtns@gmail.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/leomrtns"
+      #- label: "Twitter"
+      #icon: "fab fa-fw fa-twitter-square"
+      #url: "https://twitter.com/leomrtns"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/leomrtns"
+    - label: "Mastodon"
+      icon: "fab fa-mastodon"
+      url: "https://mstdn.science/@leomrtns"
+      rel: "me"
+    - label: "Bluesky"
+      icon: "fab fa-bluesky"
+      url: "https://bsky.app/profile/leomrtns.bsky.social"
 
 footer:
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://www.leomartins.org"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/leomrtns"
+      #- label: "Twitter"
+      #icon: "fab fa-fw fa-twitter-square"
+      #url: "https://twitter.com/leomrtns"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/leomrtns"
     - label: "Mastodon"
-      icon: "fab fa-fw fa-mastodon"
+      icon: "fab fa-mastodon"
       url: "https://mstdn.science/@leomrtns"
+    - label: "Bluesky"
+      icon: "fab fa-bluesky"
+      url: "https://bsky.app/profile/leomrtns.bsky.social"
 
 defaults:
   #_posts
@@ -116,3 +126,10 @@ category_archive:
 #tag_archive:
 #  type: liquid
 #  path: /tags/
+share:
+  twitter: false
+  facebook: true
+  linkedin: true
+  mastodon: true
+  bluesky: true
+  reddit: false
