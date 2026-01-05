@@ -1,8 +1,8 @@
 main:
-#  - title: "Posts"
-#    url: /posts/
-  - title: "blog notes"
-    url: /jupyterblog/
+  - title: "Blog posts"
+    url: /posts/
+#  - title: "blog notes"
+#    url: /jupyterblog/
   - title: "About me"
     url: /about/
   - title: "Doxygen documentation"
