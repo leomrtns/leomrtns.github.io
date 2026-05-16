@@ -64,3 +64,16 @@ instead with references of what you think does the same, and suggest them to tak
 song about love. -- Pete Cordell",
 
 "The best programs are the ones written when the programmer is supposed to be working on something else." - Melinda Varian
+
+# update from 2026-05 : reflexive vs reflective
+Our first impulse is to be dismissive. That is reflex. However later when we reflect upon something we might undertand
+it better. 
+I was reminded of this when I mentioned in a forum that (I've heard that) we should be learning a new programming
+language every year. 
+We don't need to be proficient at it, especially in one year, and we don't need to do it every year. I don't even know
+if there is a new language to be learnt every year.
+But sometimes we might feel that a language is easier for us, or that we like it after all. 
+And the process of trying to understand a new thing is a good mental exercise, better that the dismissive "I haven't
+tried it and I don't like it".
+And this was not a normative statement, but a suggestion that I may even not be following.
+

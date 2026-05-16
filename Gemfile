@@ -4,6 +4,13 @@ gem "github-pages", group: :jekyll_plugins
 
 gem "tzinfo-data"
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
+gem "csv"
+gem "bigdecimal"
+gem "ostruct"
+gem "webrick"
+gem "logger"
+gem "faraday-retry"
+
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do

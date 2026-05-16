@@ -49,6 +49,10 @@ In short, we are increasingly using the wrong terminology and expandind methodol
 And we are losing the capacity of fighting back, and of determining who to listen to and to read (a few expert,
 hard-to-read papers or [masses of articles in simple English](https://royalsocietypublishing.org/doi/10.1098/rspb.2020.2581)?)
 
+"Hannah Arendt warned us in her work "The Origins of Totalitarianism," that the goal of constant lying wasn't to
+persuade people to believe a specific lie, but rather to destroy their capacity to distinguish between truth and
+falsehood, leading to a state of complete subjugation"
+
 ###
 
 misnomers
