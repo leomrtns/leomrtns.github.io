@@ -26,7 +26,7 @@ In the current local project, Quarto and a Python environment have already been 
 ./scripts/quarto.sh preview --host 127.0.0.1 --port 4260 --no-browser
 ```
 
-Open `http://127.0.0.1:4260/`. To build and validate without starting a server:
+Open `http://127.0.0.1:4260/`. Stop an active Quarto preview with Ctrl+C before running a separate full render; simultaneous render processes share temporary output files. To build and validate without starting a server:
 
 ```bash
 ./scripts/quarto.sh render
