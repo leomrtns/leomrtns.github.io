@@ -1,9 +1,10 @@
 ---
+image: /assets/design/posts/invariant-sites.svg
+image-alt: An alignment highlighting constant and variable columns
 title: Not all invariant sites are created the same
 date: '2022-08-16'
 author: Leo Martins
 categories:
-- Binfie Notes
 - phylogenetics
 description: Why removing invariant sites is usually a bad idea for maximum likelihood
   tree inference

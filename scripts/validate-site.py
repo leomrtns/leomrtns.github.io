@@ -32,7 +32,7 @@ class Page(HTMLParser):
         self.links.append(attrs[key])
 
 pages = [OUT / p for p in ['index.html','projects/index.html','blog/index.html','about/index.html',
-                           'doxygen/index.html','404.html']]
+                           'publications/index.html','doxygen/index.html','404.html']]
 pages += list((OUT / 'posts').glob('*/index.html'))
 parsed = {}
 for path in pages:
@@ -47,6 +47,10 @@ for path in pages:
     errors.append(f'Expected one title: {path.relative_to(OUT)}')
   if '{{site.' in text or '{% include' in text:
     errors.append(f'Unconverted Jekyll markup: {path.relative_to(OUT)}')
+  footer = text.split('<footer', 1)[-1]
+  for icon in ['globe', 'envelope-fill', 'github', 'mastodon', 'bluesky', 'linkedin', 'rss-fill']:
+    if f'bi-{icon}"' not in footer:
+      errors.append(f'Missing footer icon {icon}: {path.relative_to(OUT)}')
 for path, page in parsed.items():
   for value in page.links:
     url = urlsplit(value)
@@ -65,6 +69,17 @@ for path, page in parsed.items():
         errors.append(f'{path.relative_to(OUT)} → missing fragment {value}')
 
 mapping = json.loads((ROOT / 'scripts/migration-map.json').read_text())
+blog = (OUT / 'blog/index.html').read_text()
+if blog.count('class="thumbnail-image"') != len(list((OUT / 'posts').glob('*/index.html'))):
+  errors.append('Each published post should have one blog listing thumbnail')
+if 'category=Binfie' in (OUT / 'projects/index.html').read_text():
+  errors.append('The removed Binfie category shortcut is still on Projects')
+for relative, count in [('projects/index.html', 14), ('index.html', 3)]:
+  if (OUT / relative).read_text().count('class="project-art"') != count:
+    errors.append(f'Missing project artwork: {relative}')
+publications = (OUT / 'publications/index.html').read_text()
+if '<li class="publication">' not in publications or 'https://orcid.org/0000-0001-5247-1320' not in publications:
+  errors.append('Publications page is missing records or the ORCID source link')
 for item in mapping:
   if item['target'].endswith('.ipynb'):
     source = ROOT / item['target']
@@ -91,7 +106,7 @@ for folder in ['doxygen-biomcmclib', 'SpecImage']:
     if not destination.exists() or source.read_bytes() != destination.read_bytes():
       errors.append(f'Legacy resource missing/changed: {source.relative_to(ROOT)}')
 
-for forbidden in ['_drafts','_posts','_pages','authoring','scripts','.github','.local-state']:
+for forbidden in ['_drafts','_posts','_pages','authoring','scripts','.github','.local-state','publications/data']:
   if (OUT / forbidden).exists():
     errors.append(f'Nonpublic authoring directory in output: {forbidden}')
 

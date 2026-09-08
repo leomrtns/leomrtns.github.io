@@ -1,6 +1,6 @@
 # Leo Martins — website and blog
 
-A Quarto website combining the project directory, personal blog, and Binfie Notes. The intended address is **https://leomrtns.github.io/**. Source lives in the existing `leomrtns.github.io` repository; the local redesign branch is `website-redesign`.
+A Quarto website combining projects, publications, the personal blog, and the former notebook blog. The intended address is **https://leomrtns.github.io/**. Source lives in the existing `leomrtns.github.io` repository; the local redesign branch is `website-redesign`.
 
 Nothing has been published as part of the local migration. Pushes and any GitHub Pages configuration changes require Leo's approval.
 
@@ -57,16 +57,33 @@ Redirect pages and old RSS paths are included in the main site's output. GitHub 
 
 This is a separate, approval-required publishing step. Do not delete the notebook repository. The local migration does not depend on changing it.
 
+## Publications from ORCID
+
+The Publications page uses the public works feed for [ORCID 0000-0001-5247-1320](https://orcid.org/0000-0001-5247-1320). It lists the preferred record from each ORCID work group, removes duplicate DOIs, and groups results by publication year. Article, preprint, and other output types remain labelled as supplied by ORCID. It does not scrape Google Scholar or require manual website entries.
+
+To refresh locally:
+
+```bash
+python3 scripts/update-publications.py --refresh
+./scripts/quarto.sh render
+```
+
+Ordinary local renders use the saved `publications/data/orcid-works.json` feed without a network request. The generated `publications/_entries.qmd` is rebuilt automatically and should not be edited. The page shows the date of the last successful download. If ORCID is unavailable or returns invalid/empty data, refreshing retains the saved list and prints a warning; it fails if there is no saved list to use.
+
+Once GitHub publishing is approved and enabled, every workflow build refreshes ORCID first. To update only publications, open **Actions → Build and publish website → Run workflow**, choosing `master`. No source edit or new commit is required. Running it on `website-redesign` only builds and validates. ORCID changes are picked up at the next build, not on every visitor's page load. The website can only list works made public on that ORCID record.
+
 ## Content and design
 
 - `index.md`: homepage and selected writing.
 - `projects/index.md`: all existing software and companion-analysis links.
 - `blog/index.md`: automatic category listing and RSS.
+- `publications/index.md`: research outputs from the saved ORCID feed.
 - `posts/<slug>/index.md` or `index.ipynb`: the nine published articles.
 - `_drafts/`: the five original unpublished drafts, excluded from rendering and deployment.
 - `authoring/templates/`: starter Markdown, notebook, and computational posts; excluded from the website.
 - `assets/design/theme.scss`: site-wide typography, colours, code blocks, and figure layout.
 - `assets/design/leo.mplstyle`: matching Matplotlib defaults for future figures.
+- `assets/design/posts/`: schematic thumbnails for the technical articles.
 - `doxygen-biomcmclib/` and `SpecImage/`: original documentation resources copied unchanged.
 - `scripts/migration-map.json`: migrated routes and notebook code/output fingerprints.
 - `scripts/post-render.py`: legacy indexes, feeds, aliases, and attachment paths.

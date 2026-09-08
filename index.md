@@ -44,6 +44,8 @@ I’m Leo Martins, a Bayesian computational biologist at the University of Liver
 ::: {.project-card}
 [C / PHYLOGENETICS]{.project-kind}
 
+<div class="project-art"><img src="/assets/images/logo_biomcmc.png" alt="biomcmc-lib project artwork" width="1250" height="500" loading="lazy"></div>
+
 ### [biomcmc-lib](https://github.com/leomrtns/biomcmc-lib)
 
 Low-level building blocks for phylogenetic analyses, from k-mers and hashing to tree algorithms.
@@ -53,6 +55,8 @@ Low-level building blocks for phylogenetic analyses, from k-mers and hashing to 
 ::: {.project-card}
 [SEQUENCES / SEARCH]{.project-kind}
 
+<div class="project-art"><img src="/assets/images/logo_uvaia.png" alt="Uvaia project artwork" width="1250" height="500" loading="lazy"></div>
+
 ### [Uvaia](https://github.com/leomrtns/uvaia)
 
 Reference-based alignment and search against an aligned sequence database.
@@ -61,6 +65,8 @@ Reference-based alignment and search against an aligned sequence database.
 :::
 ::: {.project-card}
 [BAYESIAN MODELS / SPECIES TREES]{.project-kind}
+
+<div class="project-art"><img src="/assets/images/logo_guenomu.png" alt="Guenomu project artwork" width="1250" height="500" loading="lazy"></div>
 
 ### [Guenomu](https://bitbucket.org/leomrtns/guenomu/)
 
@@ -96,7 +102,7 @@ On keeping a lasting record of ideas and conversations.
 Why removing invariant sites is usually a bad idea for maximum likelihood tree inference.
 :::
 ::: {.writing-row}
-[1 FEB 2022 / BINFIE NOTES]{.writing-date}
+[1 FEB 2022 / ALGORITHMS]{.writing-date}
 
 ### [Minimal example of a rolling hash](posts/rolling-hash/index.ipynb)
 

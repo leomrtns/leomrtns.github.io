@@ -19,7 +19,7 @@ Open `posts/sequence-notes/index.md` in Obsidian. Replace the sample text, descr
 title: "Notes on sequences"
 date: 2026-09-08
 description: "What these notes explain."
-categories: [Binfie Notes, phylogenetics]
+categories: [phylogenetics]
 draft: true
 ---
 ```
@@ -68,6 +68,19 @@ The template explicitly enables execution and freezes its results. Commit the re
 For a prose-only `.qmd`, remove the `jupyter` and executable-code settings, or use `.md` instead. Code blocks marked with a language (` ```c `) display code; Quarto computational blocks (` ```{python} `) can execute it when enabled.
 
 ## Figures
+
+Every blog listing entry has a thumbnail. Set these fields in a post's YAML header (the first Raw cell for a notebook):
+
+```yaml
+image: thumbnail.svg
+image-alt: A short description of the figure
+```
+
+Put that image beside the post, or use a shared `/assets/...` path. Posts without an explicit image inherit the raccoon from `posts/_metadata.yml`. Listing diagrams illustrate the article's topic; they are not additional experimental results.
+
+Project artwork keeps its original files under `assets/images/`. CSS gives it a consistent frame, softens saturation, and blends white into the shared blue/teal background. Scientific plots inside articles keep their original colours.
+
+To replace the homepage figure, change the `<img>` source and alt text in `index.md`, and update its width/height to the new image's proportions. Transparent SVG or PNG artwork will reveal the default background beneath it. The background belongs to `.hero-science`, independently of the image; change `--figure-background` and `--figure-wash` in `assets/design/theme.scss` to adjust it everywhere those figure surfaces are used.
 
 Existing notebook outputs and the colour-printing screenshot are preserved. Their surrounding layout, caption typography, and code blocks share the site's design. Do not recolour an image where colour is part of the example or a scientific encoding.
 

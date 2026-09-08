@@ -2,7 +2,7 @@
 title: "A new note"
 date: 2026-09-08
 description: "A sentence describing this post."
-categories: [Binfie Notes]
+categories: [Notes]
 draft: true
 ---
 

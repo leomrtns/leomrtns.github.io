@@ -2,7 +2,7 @@
 
 Built with Quarto 1.10.18 and Python 3.12. This is a local source/build validation; the GitHub workflow has not run and no site has been uploaded.
 
-- Full render succeeds for the homepage, project directory, blog, about, documentation index, 404 page, and nine articles (15 pages).
+- Full render succeeds for the homepage, project directory, blog, publications, about, documentation index, 404 page, and nine articles (16 pages).
 - All internal links and image/script/style resources from those pages resolve. Existing external links were preserved; their remote availability was not exhaustively tested.
 - All five C notebooks retain byte-equivalent code cell sources, outputs, and execution counts, compared through canonical JSON fingerprints to the old repository.
 - All notebooks have local downloadable `.ipynb` files.
@@ -14,5 +14,10 @@ Built with Quarto 1.10.18 and Python 3.12. This is a local source/build validati
 - The `.qmd` example executed successfully with a LaTeX equation, cross-referenced figure, and matching Matplotlib style.
 - Its whole-project render then succeeded with an unavailable Python executable, using the frozen computation rather than rerunning the analysis.
 - The GitHub workflow's YAML, master-only deployment condition, shell wrapper syntax, SVG syntax, and Git whitespace checks pass.
+- The public ORCID refresh succeeds for `0000-0001-5247-1320`; 85 works appear in the generated Publications page with year headings and source links.
+- Publication parser tests cover preferred assertions, fallback metadata, DOI deduplication, non-mutating reads, absent dates, safe text/URLs, and preserving a saved feed on network errors or empty/invalid responses.
+- All 16 main pages contain the seven footer social/contact icons and labels. Projects contains 14 artwork frames; the homepage has three more.
+- All nine blog listing entries have thumbnails and alt text, and the blog intro includes the original raccoon. Six new schematic SVG thumbnails parse successfully.
+- The homepage background is supplied by CSS independently of its transparent SVG. Original project image files and scientific notebook figures are unchanged.
 
 The original five drafts remain excluded from rendering. The third-party reference repository and old `jupyterblog` checkout are unchanged. Archived article text has not been scientifically re-reviewed; one malformed `random.org` link was repaired.

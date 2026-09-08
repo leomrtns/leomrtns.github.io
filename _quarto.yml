@@ -5,6 +5,7 @@ project:
     - index.md
     - projects/index.md
     - about/index.md
+    - publications/index.md
     - blog/index.md
     - posts/**/*.md
     - posts/**/*.qmd
@@ -15,6 +16,8 @@ project:
     - assets/
     - doxygen-biomcmclib/
     - SpecImage/
+  pre-render:
+    - python3 scripts/update-publications.py
   post-render:
     - python3 scripts/post-render.py
 website:
@@ -33,6 +36,8 @@ website:
         href: projects/index.md
       - text: Blog
         href: blog/index.md
+      - text: Publications
+        href: publications/index.md
       - text: About
         href: about/index.md
     right:
@@ -42,12 +47,21 @@ website:
   page-footer:
     left: 'Leo Martins · Computational biology & evolutionary genomics'
     right:
-      - text: RSS
-        href: blog/index.xml
-      - text: GitHub
+      - text: '<i class="bi bi-globe" aria-hidden="true"></i> Website'
+        href: https://www.leomartins.org
+      - text: '<i class="bi bi-envelope-fill" aria-hidden="true"></i> Email'
+        href: mailto:leomrtns@gmail.com
+      - text: '<i class="bi bi-github" aria-hidden="true"></i> GitHub'
         href: https://github.com/leomrtns
-      - text: Bluesky
+      - text: '<i class="bi bi-mastodon" aria-hidden="true"></i> Mastodon'
+        href: https://mstdn.science/@leomrtns
+        rel: me
+      - text: '<i class="bi bi-bluesky" aria-hidden="true"></i> Bluesky'
         href: https://bsky.app/profile/leomrtns.bsky.social
+      - text: '<i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn'
+        href: https://www.linkedin.com/in/leomrtns
+      - text: '<i class="bi bi-rss-fill" aria-hidden="true"></i> RSS'
+        href: blog/index.xml
   draft-mode: gone
 format:
   html:

@@ -1,4 +1,6 @@
 ---
+image: /assets/images/logo_biomcmc_blog.png
+image-alt: The bioMCMC blog artwork
 title: Back to blogging
 date: '2026-01-05'
 author: Leo Martins

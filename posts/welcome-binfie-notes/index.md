@@ -1,4 +1,6 @@
 ---
+image: /assets/images/logo_araiguma.png
+image-alt: The blog raccoon
 title: Welcome to the blog
 date: '2018-01-01'
 author: Leo Martins

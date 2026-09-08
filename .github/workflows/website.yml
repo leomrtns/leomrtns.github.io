@@ -29,6 +29,10 @@ jobs:
           version: '1.10.18'
       - name: Install rendering dependencies
         run: python -m pip install -r requirements-render.txt
+      - name: Refresh publications from ORCID
+        run: |
+          python scripts/test-publications.py
+          python scripts/update-publications.py --refresh
       - name: Render saved notebooks and Markdown
         run: quarto render
       - name: Validate content and internal links

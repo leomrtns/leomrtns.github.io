@@ -1,4 +1,6 @@
 ---
+image: /assets/images/bio-photo.jpg
+image-alt: Leo Martins
 title: Welcome
 date: '2026-01-04'
 author: Leo Martins
