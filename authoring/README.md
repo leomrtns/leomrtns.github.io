@@ -100,7 +100,7 @@ For ordinary images in Markdown:
 The result is shown in @fig-comparison.
 ```
 
-## Publishing routine after the initial migration is approved
+## Publishing routine
 
 1. Write in Obsidian or VS Code.
 2. Run and save changed notebook computations, or explicitly render a computational `.qmd` to update `_freeze/`.
@@ -108,4 +108,4 @@ The result is shown in @fig-comparison.
 4. Build and validate with `./scripts/quarto.sh render` and `python3 scripts/validate-site.py`.
 5. Commit and push approved changes to the publishing branch. GitHub Actions builds the HTML and deploys it automatically.
 
-During the current redesign, pushing/uploading requires Leo's explicit approval. A successful local render does not publish anything.
+A local render does not publish anything. Pushing source changes to `master` starts the GitHub build and publication workflow.

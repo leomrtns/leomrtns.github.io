@@ -48,6 +48,8 @@ for path in pages:
   if '{{site.' in text or '{% include' in text:
     errors.append(f'Unconverted Jekyll markup: {path.relative_to(OUT)}')
   footer = text.split('<footer', 1)[-1]
+  if 'https://www.liverpool.ac.uk/people/leonardo-de-oliveira-martins' not in footer:
+    errors.append(f'Missing Liverpool profile in footer: {path.relative_to(OUT)}')
   for icon in ['globe', 'envelope-fill', 'github', 'mastodon', 'bluesky', 'linkedin', 'rss-fill']:
     if f'bi-{icon}"' not in footer:
       errors.append(f'Missing footer icon {icon}: {path.relative_to(OUT)}')
@@ -80,6 +82,8 @@ for relative, count in [('projects/index.html', 14), ('index.html', 3)]:
 publications = (OUT / 'publications/index.html').read_text()
 if '<li class="publication">' not in publications or 'https://orcid.org/0000-0001-5247-1320' not in publications:
   errors.append('Publications page is missing records or the ORCID source link')
+if 'class="review-summary"' not in publications or '<summary>Reviewing by journal</summary>' not in publications:
+  errors.append('Publications page is missing the peer-review summary or journal breakdown')
 for item in mapping:
   if item['target'].endswith('.ipynb'):
     source = ROOT / item['target']

@@ -48,7 +48,7 @@ website:
     left: 'Leo Martins · Computational biology & evolutionary genomics'
     right:
       - text: '<i class="bi bi-globe" aria-hidden="true"></i> Website'
-        href: https://www.leomartins.org
+        href: https://www.liverpool.ac.uk/people/leonardo-de-oliveira-martins
       - text: '<i class="bi bi-envelope-fill" aria-hidden="true"></i> Email'
         href: mailto:leomrtns@gmail.com
       - text: '<i class="bi bi-github" aria-hidden="true"></i> GitHub'

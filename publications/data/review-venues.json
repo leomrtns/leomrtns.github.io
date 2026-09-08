@@ -1,0 +1,70 @@
+{
+  "issn:1055-7903": {
+    "name": "Molecular Phylogenetics and Evolution",
+    "url": "https://api.crossref.org/journals/1055-7903"
+  },
+  "issn:1063-5157": {
+    "name": "Systematic Biology",
+    "url": "https://api.crossref.org/journals/1063-5157"
+  },
+  "issn:1091-6490": {
+    "name": "Proceedings of the National Academy of Sciences",
+    "url": "https://api.crossref.org/journals/1091-6490"
+  },
+  "issn:1367-4811": {
+    "name": "Bioinformatics",
+    "url": "https://api.crossref.org/journals/1367-4811"
+  },
+  "issn:1432-1432": {
+    "name": "Journal of Molecular Evolution",
+    "url": "https://api.crossref.org/journals/1432-1432"
+  },
+  "issn:1471-2105": {
+    "name": "BMC Bioinformatics",
+    "url": "https://api.crossref.org/journals/1471-2105"
+  },
+  "issn:1537-1719": {
+    "name": "Molecular Biology and Evolution",
+    "url": "https://api.crossref.org/journals/1537-1719"
+  },
+  "issn:1557-9964": {
+    "name": "IEEE/ACM Transactions on Computational Biology and Bioinformatics",
+    "url": "https://api.crossref.org/journals/1557-9964"
+  },
+  "issn:2045-7758": {
+    "name": "Ecology and Evolution",
+    "url": "https://api.crossref.org/journals/2045-7758"
+  },
+  "issn:2049-2618": {
+    "name": "Microbiome",
+    "url": "https://api.crossref.org/journals/2049-2618"
+  },
+  "issn:2057-5858": {
+    "name": "Microbial Genomics",
+    "url": "https://api.crossref.org/journals/2057-5858"
+  },
+  "issn:2633-6685": {
+    "name": "FEMS Microbes",
+    "url": "https://api.crossref.org/journals/2633-6685"
+  },
+  "issn:2635-0041": {
+    "name": "Bioinformatics Advances",
+    "url": "https://api.crossref.org/journals/2635-0041"
+  },
+  "issn:1567-7257": {
+    "name": "Infection, Genetics and Evolution",
+    "url": "https://portal.issn.org/resource/ISSN/1567-7257"
+  },
+  "issn:1439-0973": {
+    "name": "Infection",
+    "url": "https://api.crossref.org/journals/1439-0973"
+  },
+  "issn:1932-6203": {
+    "name": "PLOS One",
+    "url": "https://api.crossref.org/journals/1932-6203"
+  },
+  "issn:2045-2322": {
+    "name": "Scientific Reports",
+    "url": "https://api.crossref.org/journals/2045-2322"
+  }
+}

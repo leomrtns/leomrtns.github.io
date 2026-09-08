@@ -21,3 +21,9 @@ Built with Quarto 1.10.18 and Python 3.12. This is a local source/build validati
 - The homepage background is supplied by CSS independently of its transparent SVG. Original project image files and scientific notebook figures are unchanged.
 
 The original five drafts remain excluded from rendering. The third-party reference repository and old `jupyterblog` checkout are unchanged. Archived article text has not been scientifically re-reviewed; one malformed `random.org` link was repaired.
+
+## Publication update
+
+- The footer Website link points to the Liverpool staff profile.
+- ORCID provides 85 public review activities: 84 across 17 journals and one Wellcome funding review, spanning 2009–2026. The page displays a summary and expandable journal breakdown.
+- Five parser tests cover works and review grouping, source identity, duplicate assertions, editor exclusion, separate funding records, safe rendering, and saved-data fallback.

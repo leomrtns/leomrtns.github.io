@@ -2,7 +2,7 @@
 
 A Quarto website combining projects, publications, the personal blog, and the former notebook blog. The intended address is **https://leomrtns.github.io/**. Source lives in the existing `leomrtns.github.io` repository; the local redesign branch is `website-redesign`.
 
-Nothing has been published as part of the local migration. Pushes and any GitHub Pages configuration changes require Leo's approval.
+The redesign and GitHub Pages migration were approved on 8 September 2026. The previous website is preserved by the `legacy-website-2026-09-08` tag.
 
 ## Write in the editor you already use
 
@@ -35,7 +35,7 @@ python3 scripts/validate-site.py
 
 On another computer, install Quarto 1.10.18 from its official distribution and install `requirements-render.txt` in a project-local virtual environment. The wrapper also accepts `QUARTO_BIN` and `QUARTO_PYTHON`, or uses Quarto on PATH. The plain `quarto render` command works in CI.
 
-## Automatic GitHub publishing — prepared, not activated
+## Automatic GitHub publishing
 
 The workflow in `.github/workflows/website.yml`:
 
@@ -44,9 +44,9 @@ The workflow in `.github/workflows/website.yml`:
 3. Renders stored notebook results rather than executing old analysis environments.
 4. Uploads only `_site/`, never the repository as a whole.
 
-After reviewing and approving the redesign, the recommended deployment is to keep this repository, set Settings → Pages → Source to **GitHub Actions**, and merge the approved branch into `master`. The site remains at `https://leomrtns.github.io/`; a new project repository would normally add its name to the URL. Do not change the publishing source while the old site is still intended to serve from Jekyll.
+The deployment uses this repository, with Settings → Pages → Source set to **GitHub Actions**, and the website source on `master`. The site remains at `https://leomrtns.github.io/`; a new project repository would normally add its name to the URL. Do not change the publishing source while the old site is still intended to serve from Jekyll.
 
-If a different repository or branch is chosen, adjust `_quarto.yml` (`site-url`) and the workflow's branch triggers and deployment conditions before pushing. No GitHub settings have been changed. Workflow execution on GitHub has not yet been tested.
+If a different repository or branch is chosen, adjust `_quarto.yml` (`site-url`) and the workflow's branch triggers and deployment conditions before pushing.
 
 ### The old `/jupyterblog/` site
 
@@ -59,7 +59,7 @@ This is a separate, approval-required publishing step. Do not delete the noteboo
 
 ## Publications from ORCID
 
-The Publications page uses the public works feed for [ORCID 0000-0001-5247-1320](https://orcid.org/0000-0001-5247-1320). It lists the preferred record from each ORCID work group, removes duplicate DOIs, and groups results by publication year. Article, preprint, and other output types remain labelled as supplied by ORCID. It does not scrape Google Scholar or require manual website entries.
+The Publications page uses the public works and peer-review feeds for [ORCID 0000-0001-5247-1320](https://orcid.org/0000-0001-5247-1320). It lists the preferred record from each ORCID work group, removes duplicate DOIs, and groups results by publication year. Article, preprint, and other output types remain labelled as supplied by ORCID. It does not scrape Google Scholar or require manual website entries.
 
 To refresh locally:
 
@@ -68,9 +68,13 @@ python3 scripts/update-publications.py --refresh
 ./scripts/quarto.sh render
 ```
 
-Ordinary local renders use the saved `publications/data/orcid-works.json` feed without a network request. The generated `publications/_entries.qmd` is rebuilt automatically and should not be edited. The page shows the date of the last successful download. If ORCID is unavailable or returns invalid/empty data, refreshing retains the saved list and prints a warning; it fails if there is no saved list to use.
+Ordinary local renders use the saved feeds under `publications/data/` without a network request. The generated `publications/_entries.qmd` and `_reviews.qmd` are rebuilt automatically and should not be edited. Peer-review totals count each ORCID review group once, excluding editor roles. The expandable table ranks journals by their recorded review counts, while funding and other reviewing are shown separately. Only public ORCID review records are included; these are review activities, not necessarily distinct manuscripts or a complete career total. Journal names are resolved from Crossref ISSNs and cached; the ISSN registry supplies the name for one journal absent from Crossref. Unresolved new identifiers remain visible until their name can be fetched. The page shows the date of the last successful download. If ORCID is unavailable or returns invalid/empty data, refreshing retains the saved list and prints a warning; it fails if there is no saved list to use.
 
-Once GitHub publishing is approved and enabled, every workflow build refreshes ORCID first. To update only publications, open **Actions → Build and publish website → Run workflow**, choosing `master`. No source edit or new commit is required. Running it on `website-redesign` only builds and validates. ORCID changes are picked up at the next build, not on every visitor's page load. The website can only list works made public on that ORCID record.
+Every workflow build refreshes both ORCID feeds first. To update publications and reviewing, open **Actions → Build and publish website → Run workflow**, choosing `master`. No source edit or new commit is required. Running it on `website-redesign` only builds and validates. ORCID changes are picked up at the next build, not on every visitor's page load. The website can only list works made public on that ORCID record.
+
+## Previous website
+
+The annotated tag [`legacy-website-2026-09-08`](https://github.com/leomrtns/leomrtns.github.io/tree/legacy-website-2026-09-08) preserves commit `8be9bc946190d9e581d6c2adfdefca19a90d615a`, verified against the last successful deployment before migration. Browse that tag to read the old Markdown posts or download its source archive from GitHub. It contains the original Jekyll site and configuration, not a rendered HTML snapshot. Compare the tag with `master` to review the redesign.
 
 ## Content and design
 

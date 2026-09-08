@@ -116,6 +116,18 @@ blockquote { border-left: 3px solid var(--teal); color: var(--muted); padding: .
 .publication h3 a:hover { text-decoration: underline; }
 .publication-meta, .publication-doi { color: var(--muted); font-size: .85rem; margin-bottom: .2rem; }
 .publication-doi { overflow-wrap: anywhere; font-size: .78rem; }
+.review-summary { background: var(--figure-wash); border: 1px solid var(--line); border-radius: 6px; padding: 1.5rem; margin-bottom: 2.5rem; }
+.review-stats { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; margin-bottom: 1rem; }
+.review-stats p { margin: 0; }
+.review-stats strong { display: block; color: var(--teal); font-size: 1.85rem; line-height: 1.3; }
+.review-stats span { font-size: .85rem; color: var(--muted); }
+.review-details summary { cursor: pointer; font-weight: 600; color: var(--teal); padding-block: .5rem; }
+.review-details table { width: 100%; font-size: .85rem; margin: .5rem 0 1rem; }
+.review-details th, .review-details td { padding: .45rem .5rem; border-bottom: 1px solid var(--line); }
+.review-details tbody th { font-weight: 400; }
+.review-details td, .review-details thead th:last-child { text-align: right; }
+.review-other { margin-top: 1rem; }
+.review-provenance { font-size: .78rem; color: var(--muted); margin: 1rem 0 0; }
 .about-portrait { border-radius: 6px; max-width: 210px; float: right; margin: 0 0 2rem 2rem; }
 .doc-links { display: flex; flex-wrap: wrap; gap: .7rem; margin: 1.5rem 0; }
 @media (min-width: 1200px) { body:has(.home-hero) .page-columns, body:has(.project-grid) .page-columns { column-gap: 2rem; } }

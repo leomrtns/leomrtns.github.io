@@ -1,8 +1,10 @@
 ---
 title: Publications
-description: Research in computational biology, evolutionary genomics, and phylogenetics.
+description: Research and peer reviewing in computational biology, evolutionary genomics, and phylogenetics.
 toc: true
-toc-title: By year
+toc-title: On this page
 ---
+
+{{< include _reviews.qmd >}}
 
 {{< include _entries.qmd >}}
