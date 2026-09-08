@@ -1,0 +1,67 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.md
+    - projects/index.md
+    - about/index.md
+    - blog/index.md
+    - posts/**/*.md
+    - posts/**/*.qmd
+    - posts/**/*.ipynb
+    - doxygen/index.md
+    - 404.md
+  resources:
+    - assets/
+    - doxygen-biomcmclib/
+    - SpecImage/
+  post-render:
+    - python3 scripts/post-render.py
+website:
+  title: Leo Martins
+  site-url: https://leomrtns.github.io
+  description: Computational biology, evolutionary genomics, and notes from the workbench.
+  favicon: assets/design/favicon.svg
+  search:
+    location: navbar
+    type: overlay
+  navbar:
+    background: light
+    title: 'Leo Martins<span class="brand-dot">.</span>'
+    left:
+      - text: Projects
+        href: projects/index.md
+      - text: Blog
+        href: blog/index.md
+      - text: About
+        href: about/index.md
+    right:
+      - icon: github
+        href: https://github.com/leomrtns
+        aria-label: GitHub
+  page-footer:
+    left: 'Leo Martins · Computational biology & evolutionary genomics'
+    right:
+      - text: RSS
+        href: blog/index.xml
+      - text: GitHub
+        href: https://github.com/leomrtns
+      - text: Bluesky
+        href: https://bsky.app/profile/leomrtns.bsky.social
+  draft-mode: gone
+format:
+  html:
+    theme: [cosmo, assets/design/theme.scss]
+    toc: true
+    toc-title: On this page
+    code-copy: true
+    code-overflow: scroll
+    highlight-style: github
+    html-math-method: mathjax
+    lang: en-GB
+    date-format: D MMMM YYYY
+    link-external-newwindow: true
+    smooth-scroll: true
+execute:
+  enabled: false
+  freeze: true

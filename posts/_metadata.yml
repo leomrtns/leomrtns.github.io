@@ -1,0 +1,7 @@
+author: Leo Martins
+freeze: true
+execute:
+  enabled: false
+format:
+  html:
+    toc: true

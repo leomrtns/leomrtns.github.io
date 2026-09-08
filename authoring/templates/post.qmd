@@ -1,0 +1,40 @@
+---
+title: "A computational note"
+date: 2026-09-08
+description: "An explanation with a computed figure."
+categories: [Binfie Notes, Python]
+draft: true
+jupyter: python3
+execute:
+  enabled: true
+  freeze: true
+format:
+  html:
+    code-fold: true
+---
+
+## A simple example
+
+The exponential density is $f(x)=\lambda e^{-\lambda x}$ for $x\geq 0$.
+
+```{python}
+#| label: fig-exponential
+#| fig-cap: "Exponential densities for three rate parameters."
+import numpy as np
+import matplotlib.pyplot as plt
+from pathlib import Path
+
+# Resolve the style from either a post folder or the repository root.
+root = next(p for p in [Path.cwd(), *Path.cwd().parents] if (p / "_quarto.yml").exists())
+plt.style.use(root / "assets/design/leo.mplstyle")
+x = np.linspace(0, 5, 300)
+fig, ax = plt.subplots()
+for rate in [0.5, 1, 2]:
+  ax.plot(x, rate * np.exp(-rate * x), label=fr"$\lambda={rate}$")
+ax.set(xlabel="x", ylabel="Density")
+ax.legend(frameon=False)
+plt.show()
+```
+
+See @fig-exponential. Render this individual post locally to update its frozen
+outputs before building the whole website.

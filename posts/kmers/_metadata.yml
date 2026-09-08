@@ -1,0 +1,6 @@
+format:
+  html:
+    code-links:
+      - text: Download notebook
+        icon: download
+        href: index.ipynb

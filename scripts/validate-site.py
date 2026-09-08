@@ -1,0 +1,110 @@
+"""Check the built site, migrated notebook contents, feeds, and legacy assets."""
+import argparse
+import hashlib
+from html.parser import HTMLParser
+import json
+from pathlib import Path
+import re
+from urllib.parse import unquote, urlsplit
+import xml.etree.ElementTree as ET
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT = ROOT / '_site'
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--check-migration', action='store_true', help='Verify original C code and outputs are unchanged')
+args = parser.parse_args()
+errors = []
+
+class Page(HTMLParser):
+  def __init__(self):
+    super().__init__()
+    self.links = []
+    self.ids = set()
+    self.title_count = 0
+  def handle_starttag(self, tag, pairs):
+    attrs = dict(pairs)
+    if tag == 'title':
+      self.title_count += 1
+    if attrs.get('id'):
+      self.ids.add(attrs['id'])
+    for key in ['href', 'src']:
+      if attrs.get(key):
+        self.links.append(attrs[key])
+
+pages = [OUT / p for p in ['index.html','projects/index.html','blog/index.html','about/index.html',
+                           'doxygen/index.html','404.html']]
+pages += list((OUT / 'posts').glob('*/index.html'))
+parsed = {}
+for path in pages:
+  if not path.exists():
+    errors.append(f'Missing page: {path.relative_to(OUT)}')
+    continue
+  text = path.read_text()
+  page = Page()
+  page.feed(text)
+  parsed[path] = page
+  if page.title_count != 1:
+    errors.append(f'Expected one title: {path.relative_to(OUT)}')
+  if '{{site.' in text or '{% include' in text:
+    errors.append(f'Unconverted Jekyll markup: {path.relative_to(OUT)}')
+for path, page in parsed.items():
+  for value in page.links:
+    url = urlsplit(value)
+    if url.scheme or url.netloc or value.startswith('data:'):
+      continue
+    target = (OUT / unquote(url.path).lstrip('/')) if url.path.startswith('/') else path.parent / unquote(url.path)
+    if not url.path:
+      target = path
+    target = target.resolve()
+    if target.is_dir():
+      target /= 'index.html'
+    if not target.exists():
+      errors.append(f'{path.relative_to(OUT)} → missing {value}')
+    if not url.path and url.fragment and not url.fragment.startswith('category='):
+      if unquote(url.fragment) not in page.ids:
+        errors.append(f'{path.relative_to(OUT)} → missing fragment {value}')
+
+mapping = json.loads((ROOT / 'scripts/migration-map.json').read_text())
+for item in mapping:
+  if item['target'].endswith('.ipynb'):
+    source = ROOT / item['target']
+    doc = json.loads(source.read_text())
+    payload = [{'source':c['source'],'outputs':c.get('outputs',[]),'execution_count':c.get('execution_count')}
+               for c in doc['cells'] if c['cell_type']=='code']
+    digest = hashlib.sha256(json.dumps(payload,sort_keys=True).encode()).hexdigest()
+    if args.check_migration and digest != item['code_outputs_sha256']:
+      errors.append(f'Migrated code or output changed: {item["target"]}')
+    if not (OUT / item['target']).exists():
+      errors.append(f'Notebook download missing: {item["target"]}')
+  for alias in item['aliases']:
+    target = OUT / alias.lstrip('/')
+    if alias.endswith('/'):
+      target /= 'index.html'
+    if not target.exists():
+      errors.append(f'Missing old route: {alias}')
+
+for folder in ['doxygen-biomcmclib', 'SpecImage']:
+  for source in (ROOT / folder).rglob('*'):
+    if not source.is_file():
+      continue
+    destination = OUT / source.relative_to(ROOT)
+    if not destination.exists() or source.read_bytes() != destination.read_bytes():
+      errors.append(f'Legacy resource missing/changed: {source.relative_to(ROOT)}')
+
+for forbidden in ['_drafts','_posts','_pages','authoring','scripts','.github','.local-state']:
+  if (OUT / forbidden).exists():
+    errors.append(f'Nonpublic authoring directory in output: {forbidden}')
+
+feed = ET.parse(OUT / 'blog/index.xml')
+items = feed.findall('./channel/item')
+if len(items) < len(mapping):
+  errors.append(f'RSS contains only {len(items)} of {len(mapping)} migrated posts')
+for name in ['feed.xml','jupyterblog/feed.xml']:
+  if (OUT / name).read_bytes() != (OUT / 'blog/index.xml').read_bytes():
+    errors.append(f'Legacy feed differs: {name}')
+if errors:
+  raise SystemExit('\n'.join(sorted(set(errors))))
+print(f'Validated {len(pages)} pages, {len(mapping)} migrated posts, notebook downloads, RSS, and legacy assets.')
+
+if args.check_migration:
+  print('All five migrated C notebooks retain their original code and outputs.')

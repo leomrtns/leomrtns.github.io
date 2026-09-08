@@ -1,167 +1,106 @@
 ---
-layout: splash
-permalink: /
-header:
-  overlay_color: "#5e616c"
-  overlay_image: /assets/images/mm-home-page-feature.jpg
-excerpt: "Computational Biologist. Tenure Track Fellow in Health at the University of Liverpool." 
-intro: 
-  - excerpt: "Below you will find links to other pages with code, documentation, and technical notes for bioinformatics and computational evolutionary biology software."
-
-featr_code:
-  - image_path: /assets/images/logo_tatajuba.png
-    alt: "tatajuba"
-    title: "Tatajuba"
-    excerpt: "Identification and classification of homopolymeric tracts from reads"
-    url: "https://github.com/leomrtns/tatajuba"
-    btn_class: "btn--primary btn--small"
-    btn_label: "source code on github"
-
-  - image_path: /assets/images/logo_uvaia.png
-    alt: "uvaia"
-    title: "Uvaia"
-    excerpt: "Reference-based alignment and search against aligned database" 
-    url: "https://github.com/leomrtns/uvaia"
-    btn_class: "btn--primary btn--small"
-    btn_label: "source code on github"
-
-  - image_path: /assets/images/logo_superdistance.png
-    alt: "super_distance"
-    title: "Super Distance"
-    excerpt: "Supertree estimation from gene family trees, using matrix representation with distances"
-    url: "https://github.com/leomrtns/super_distance"
-    btn_class: "btn--primary btn--small"
-    btn_label: "source code on github"
-
-  - image_path: /assets/images/logo_peroba.png
-    alt: "peroba"
-    title: "Peroba"
-    excerpt: "Phylogenetic exploration of SARS-CoV-2 sequences"
-    url: "https://github.com/leomrtns/peroba"
-    btn_class: "btn--primary btn--small"
-    btn_label: "source code on github"
-
-  - image_path: /assets/images/logo_guenomu.png
-    alt: "guenomu"
-    title: "Guenomu"
-    excerpt: "Hierarchical Bayesian species tree estimation from multi-gene family data"
-    url: "https://bitbucket.org/leomrtns/guenomu/"
-    btn_class: "btn--primary btn--small"
-    btn_label: "source code on bitbucket"
-
-  - image_path: /assets/images/logo_genefam.png
-    alt: "genefam_dist"
-    title: "Genefam-dist"
-    excerpt: "Signature inference of gene family trees from anchoring species trees."
-    url: "https://github.com/leomrtns/genefam-dist"
-    btn_class: "btn--primary btn--small"
-    btn_label: "source code on github"
-
-  - image_path: /assets/images/logo_specimage.png
-    alt: "specimage"
-    title: "SpecImage"
-    excerpt: "Python module to work with hyperspectral imaging data."
-    url: "https://github.com/leomrtns/specimage"
-    btn_class: "btn--primary btn--small"
-    btn_label: "source code on github"
-
-  - image_path: /assets/images/logo_biomcmc.png
-    alt: "biomcmclib"
-    title: "biomcmc-lib library"
-    excerpt: "C library with low level functions for phylogenetic analyses"
-    url: "https://github.com/leomrtns/biomcmc-lib"
-    btn_class: "btn--primary btn--small"
-    btn_label: "source code on github"
-
-  - image_path: /assets/images/logo_biomc2.png
-    alt: "recomb-biomc2"
-    title: "Recomb-biomc2"
-    excerpt: "Hiearchical Bayesian Model for Viral Phylogenetic Recombination"
-    url: "https://github.com/leomrtns/recomb-biomc2"
-    btn_class: "btn--primary btn--small"
-    btn_label: "source code on github"
-
-  - image_path: /assets/images/logo_cumaru.png
-    alt: "cumaru"
-    title: "Cumaru"
-    excerpt: "(Experimental) multiple sequence alignment based on kalign3"
-    url: "https://github.com/leomrtns/cumaru"
-    btn_class: "btn--primary btn--small"
-    btn_label: "source code on github"
-
-  - image_path: /assets/images/logo_curupixa.png
-    alt: "curupixa"
-    title: "Curupixa"
-    excerpt: "(Experimental) thread-safe API-aware C library to supercede biomcmc-lib someday"
-    url: "https://github.com/leomrtns/curupixa"
-    btn_class: "btn--primary btn--small"
-    btn_label: "source code on github"
-
-featr_texts:
-  - image_path: /assets/images/logo_araiguma.png
-    alt: "notebooks"
-    title: "Binfie notes"
-    excerpt: "Blog with technical notes on bioinformatics algorithms and implementations"
-    url: "https://leomrtns.github.io/jupyterblog"
-    btn_class: "btn--info btn--small"
-    btn_label: "Notebooks webpage"
-
-  - image_path: /assets/images/logo_biomcmc.png
-    alt: "biomcmc-libdocs"
-    title: "biomcmc-lib API"
-    excerpt: "Doxygen documentation for employing biomcmc-lib source code"
-    url: "https://leomrtns.github.io/doxygen-biomcmclib"
-    btn_class: "btn--info btn--small"
-    btn_label: "API documentation page"
-
-  - image_path: /assets/images/logo_biomcmc_blog.png
-    alt: "biomcmc-blog"
-    title: "bioMCMC blog"
-    excerpt: "Old blog with phylogenetics observations and new papers"
-    url: "http://biomcmc.blogspot.com"
-    btn_class: "btn--info btn--small"
-    btn_label: "read blog posts"
-
-featr_suppl:
-  - image_path: /assets/images/logo_salmobiofilm.png
-    alt: "Salmonella biofilm"
-    title: "Salmonella Biofilm"
-    excerpt: "Jupyter notebooks with analyses of experimental evolution of Salmonella biofilms"
-    url: "https://github.com/quadram-institute-bioscience/2020.Salmonella_biofilm"
-    btn_class: "btn--warning btn--small"
-    btn_label: "github repository"
-
-  - image_path: /assets/images/logo_70s.png
-    alt: "long-read rRNA phylogenetics"
-    title: "rRNA phylogenetics"
-    excerpt: "Analysis of the phylogenetic resolution of the rRNA operon"
-    url: "https://github.com/quadram-institute-bioscience/70S-resolution"
-    btn_class: "btn--warning btn--small"
-    btn_label: "github repository"
-
-  - image_path: /assets/images/logo_ucatest.png
-    alt: "UCA test bias"
-    title: "Tree homology tests"
-    excerpt: "Critical evaluation of tree-based homology inference"
-    url: "https://bitbucket.org/leomrtns/uca-test-bias"
-    btn_class: "btn--warning btn--small"
-    btn_label: "bitbucket repository"
-
-separ_code:
-  - image_path: /assets/images/h_separator.png
-    excerpt: '<b class="notice--primary">Software and code</b>'
-separ_texts:
-  - image_path: /assets/images/h_separator.png
-    excerpt: '<b class="notice--info">Documentation and Texts</b>'
-separ_suppl:
-  - image_path: /assets/images/h_separator.png
-    excerpt: '<b class="notice--warning">Supplementary analyses for manuscripts</b>'
+title: Leo Martins
+pagetitle: Leo Martins · Computational biology
+title-block-banner: false
+page-layout: full
+toc: false
 ---
 
-{% include feature_row id="intro" type="center" %}
-{% include feature_row id="separ_code" type="center" %}
-{% include feature_row id="featr_code" %}
-{% include feature_row id="separ_suppl" type="center" %}
-{% include feature_row id="featr_suppl" %} 
-{% include feature_row id="separ_texts" type="center" %}
-{% include feature_row id="featr_texts" %} 
+::: {.home-hero}
+::: {.hero-copy}
+[COMPUTATIONAL BIOLOGY / EVOLUTIONARY GENOMICS]{.eyebrow}
+
+# Understanding evolution.<br>[Building the tools.]{.accent}
+
+I’m Leo Martins, a Bayesian computational biologist at the University of Liverpool. I develop models and software to understand how genomes evolve.
+
+::: {.hero-actions}
+[Explore my projects →](projects/index.md){.primary-link}
+[Read the blog](blog/index.md){.text-link}
+:::
+
+[Models, algorithms, and notes from the workbench.]{.hero-note}
+:::
+
+::: {.hero-science}
+[SHARED HISTORY / DIVERGING SEQUENCES]{.eyebrow}
+
+<img src="assets/design/evolution.svg" class="hero-diagram" width="580" height="400" alt="An illustrative phylogenetic tree beside eight aligned DNA sequences; shared ancestry helps explain their similarities and differences.">
+
+[Different sequences. A shared evolutionary history.]{.figure-note}
+:::
+:::
+
+::: {.home-section}
+::: {.section-heading}
+[01 / SOFTWARE]{.eyebrow}
+
+## From biological questions to working code.
+
+[All projects →](projects/index.md){.text-link}
+:::
+
+::: {.project-grid}
+::: {.project-card}
+[C / PHYLOGENETICS]{.project-kind}
+
+### [biomcmc-lib](https://github.com/leomrtns/biomcmc-lib)
+
+Low-level building blocks for phylogenetic analyses, from k-mers and hashing to tree algorithms.
+
+[Source code ↗](https://github.com/leomrtns/biomcmc-lib) · [API documentation](doxygen-biomcmclib/index.html)
+:::
+::: {.project-card}
+[SEQUENCES / SEARCH]{.project-kind}
+
+### [Uvaia](https://github.com/leomrtns/uvaia)
+
+Reference-based alignment and search against an aligned sequence database.
+
+[Source code ↗](https://github.com/leomrtns/uvaia)
+:::
+::: {.project-card}
+[BAYESIAN MODELS / SPECIES TREES]{.project-kind}
+
+### [Guenomu](https://bitbucket.org/leomrtns/guenomu/)
+
+Hierarchical Bayesian species tree estimation from multiple gene families.
+
+[Source code ↗](https://bitbucket.org/leomrtns/guenomu/)
+:::
+:::
+:::
+
+::: {.home-section .writing-section}
+::: {.section-heading}
+[02 / WRITING]{.eyebrow}
+
+## Notes from the workbench.
+
+[All writing & RSS →](blog/index.md){.text-link}
+:::
+
+::: {.writing-list}
+::: {.writing-row}
+[5 JAN 2026 / PERSONAL]{.writing-date}
+
+### [Back to blogging](posts/back-to-blogging/index.md)
+
+On keeping a lasting record of ideas and conversations.
+:::
+::: {.writing-row}
+[16 AUG 2022 / PHYLOGENETICS]{.writing-date}
+
+### [Not all invariant sites are created the same](posts/invariant-sites/index.md)
+
+Why removing invariant sites is usually a bad idea for maximum likelihood tree inference.
+:::
+::: {.writing-row}
+[1 FEB 2022 / BINFIE NOTES]{.writing-date}
+
+### [Minimal example of a rolling hash](posts/rolling-hash/index.ipynb)
+
+A notebook exploring a rolling-hash implementation in biomcmc-lib.
+:::
+:::
+:::
