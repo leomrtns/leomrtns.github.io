@@ -9,16 +9,20 @@ toc: false
 I am a [Tenure Track Fellow in Health](https://www.liverpool.ac.uk/people/leonardo-de-oliveira-martins) at the University of Liverpool, UK, working in the
 [Signal Processing Group](https://www.liverpool.ac.uk/electrical-engineering-and-electronics/research/data-science-signal-processing/signalprocessing/)
 of the Department of Electrical Engineering and Electronics.
-I am interested in designing Bayesian scalable models for the evolution of genomes and diseases, with special interest in microbes of potential clinical interest.
-I used to be the Head of Phylogenomics at the [Quadram Institute Bioscience](https://quadram.ac.uk/) (QIB) in Norwich, UK, where I
+I am interested in exploring scalable Bayesian models for genome and disease evolution, with a particular focus on microbes of
+established, emerging, or potential clinical relevance.
+
+I was the Head of Phylogenomics at the [Quadram Institute Bioscience](https://quadram.ac.uk/) (QIB) in Norwich, UK, where I
 developed, implemented, and streamlined computational methods for the evolutionary analysis of microbial data sets.
 
-Previously I was a postdoctoral researcher working on Evolutionary Genomics at the [Dessimoz Group](http://lab.dessimoz.org) in the University of Lausanne,
-where I was also affiliated to the [SIB Swiss Institute of Bioinformatics](https://www.isb-sib.ch).
-I have also postdoctoral experience working with Hyperspectral Data Analysis at the [Stevens Group of Imperial College London](http://www.stevensgroup.org),
-and with Phylogenomics at [David Posada's Lab](https://dposada.webs.uvigo.es/) of the University of Vigo.
-I did my Ph.D. on Bayesian Phylogenetics at the [Laboratory of Biometry and Bioinformatics](http://www.ab.a.u-tokyo.ac.jp/aeb/laboratory/bb_e.html) 
-of the University of Tokyo, under the supervision of [Prof. Hirohisa Kishino](http://lbm.ab.a.u-tokyo.ac.jp/~kishino/).
+Previously, I worked in Evolutionary Genomics at the [Dessimoz Group](http://lab.dessimoz.org) at the University of
+Lausanne, where I was also affiliated with the [SIB Swiss Institute of Bioinformatics](https://www.isb-sib.ch). 
+I have also worked on Hyperspectral Data Analysis at the [Stevens Group of Imperial College
+London](http://www.stevensgroup.org) and on Phylogenomics at [David Posada's Lab](https://dposada.webs.uvigo.es/) at the
+University of Vigo.
+
+I completed my Ph.D. in Bayesian Phylogenetics at the [Laboratory of Biometry and Bioinformatics](http://lbm.ab.a.u-tokyo.ac.jp/~kishino/)
+of the University of Tokyo, under the supervision of [Prof. Hirohisa Kishino](https://orcid.org/0000-0002-3244-359X).
 
 > Signal Processing Group <br>
 > Dept Electrical Engineering and Electronics <br>

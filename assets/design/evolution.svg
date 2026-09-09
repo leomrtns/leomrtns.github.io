@@ -28,7 +28,7 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="1.4707821"
-     inkscape:cx="369.87124"
+     inkscape:cx="370.2112"
      inkscape:cy="137.34189"
      inkscape:window-width="1920"
      inkscape:window-height="1043"
@@ -49,11 +49,15 @@
     <text
        x="22"
        y="25"
-       id="text1">ANCESTRY</text>
+       id="text1"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan1">ANCESTRY</tspan></text>
     <text
        x="250"
        y="25"
-       id="text2">SEQUENCE ALIGNMENT</text>
+       id="text2"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial"
+         id="tspan2">SEQUENCE ALIGNMENT</tspan></text>
   </g>
   <text
      x="212.92732"
@@ -63,7 +67,7 @@
      fill="#526d79"
      id="text23"
      transform="scale(1.0566986,0.94634365)"
-     style="stroke-width:0.946344">1</text>
+     style="stroke-width:0.946344;stroke:#24221c">1</text>
   <text
      x="212.92732"
      y="92.306595"
@@ -72,7 +76,7 @@
      fill="#526d79"
      id="text34"
      transform="scale(1.0566986,0.94634365)"
-     style="stroke-width:0.946344">2</text>
+     style="stroke-width:0.946344;stroke:#24221c">2</text>
   <text
      x="212.92732"
      y="126.37495"
@@ -81,7 +85,7 @@
      fill="#526d79"
      id="text45"
      transform="scale(1.0566986,0.94634365)"
-     style="stroke-width:0.946344">3</text>
+     style="stroke-width:0.946344;stroke:#24221c">3</text>
   <text
      x="212.92732"
      y="160.44341"
@@ -90,7 +94,7 @@
      fill="#526d79"
      id="text56"
      transform="scale(1.0566986,0.94634365)"
-     style="stroke-width:0.946344">4</text>
+     style="stroke-width:0.946344;stroke:#24221c">4</text>
   <text
      x="212.92732"
      y="194.51176"
@@ -99,7 +103,7 @@
      fill="#526d79"
      id="text67"
      transform="scale(1.0566986,0.94634365)"
-     style="stroke-width:0.946344">5</text>
+     style="stroke-width:0.946344;stroke:#24221c">5</text>
   <text
      x="212.92732"
      y="228.58015"
@@ -108,7 +112,7 @@
      fill="#526d79"
      id="text78"
      transform="scale(1.0566986,0.94634365)"
-     style="stroke-width:0.946344">6</text>
+     style="stroke-width:0.946344;stroke:#24221c">6</text>
   <text
      x="212.92732"
      y="262.6485"
@@ -117,7 +121,7 @@
      fill="#526d79"
      id="text89"
      transform="scale(1.0566986,0.94634365)"
-     style="stroke-width:0.946344">7</text>
+     style="stroke-width:0.946344;stroke:#24221c">7</text>
   <text
      x="212.92732"
      y="296.71692"
@@ -126,7 +130,7 @@
      fill="#526d79"
      id="text100"
      transform="scale(1.0566986,0.94634365)"
-     style="stroke-width:0.946344">8</text>
+     style="stroke-width:0.946344;stroke:#24221c">8</text>
   <g
      id="g141"
      transform="translate(-36,-33.224609)">
@@ -1529,197 +1533,229 @@
   </g>
   <g
      id="g115"
-     transform="matrix(1,0,0,0.89943543,-16,-7.686324)">
+     transform="matrix(1,0,0,0.89943543,-16,-7.686324)"
+     style="stroke:#24221c">
     <path
        d="M 28,191 H 80 V 119"
        fill="none"
        stroke="#126c70"
        stroke-width="2.5"
        stroke-linejoin="round"
-       id="path2" />
+       id="path2"
+       style="stroke:#24221c" />
     <path
        d="m 80,119 h 52 V 83"
        fill="none"
        stroke="#126c70"
        stroke-width="2.5"
        stroke-linejoin="round"
-       id="path3" />
+       id="path3"
+       style="stroke:#24221c" />
     <path
        d="m 132,83 h 52 V 65"
        fill="none"
        stroke="#126c70"
        stroke-width="2.5"
        stroke-linejoin="round"
-       id="path4" />
+       id="path4"
+       style="stroke:#24221c" />
     <path
        d="m 184,65 h 42"
        stroke="#126c70"
        stroke-width="2.5"
-       id="path5" />
+       id="path5"
+       style="stroke:#24221c" />
     <circle
        cx="226"
        cy="65"
        r="4"
        fill="#126c70"
-       id="circle5" />
+       id="circle5"
+       style="stroke:#24221c" />
     <path
        d="m 132,83 h 52 v 18"
        fill="none"
        stroke="#126c70"
        stroke-width="2.5"
        stroke-linejoin="round"
-       id="path6" />
+       id="path6"
+       style="stroke:#24221c" />
     <path
        d="m 184,101 h 42"
        stroke="#126c70"
        stroke-width="2.5"
-       id="path7" />
+       id="path7"
+       style="stroke:#24221c" />
     <circle
        cx="226"
        cy="101"
        r="4"
        fill="#126c70"
-       id="circle7" />
+       id="circle7"
+       style="stroke:#24221c" />
     <path
        d="m 80,119 h 52 v 36"
        fill="none"
        stroke="#126c70"
        stroke-width="2.5"
        stroke-linejoin="round"
-       id="path8" />
+       id="path8"
+       style="stroke:#24221c" />
     <path
        d="m 132,155 h 52 v -18"
        fill="none"
        stroke="#126c70"
        stroke-width="2.5"
        stroke-linejoin="round"
-       id="path9" />
+       id="path9"
+       style="stroke:#24221c" />
     <path
        d="m 184,137 h 42"
        stroke="#126c70"
        stroke-width="2.5"
-       id="path10" />
+       id="path10"
+       style="stroke:#24221c" />
     <circle
        cx="226"
        cy="137"
        r="4"
        fill="#126c70"
-       id="circle10" />
+       id="circle10"
+       style="stroke:#24221c" />
     <path
        d="m 132,155 h 52 v 18"
        fill="none"
        stroke="#126c70"
        stroke-width="2.5"
        stroke-linejoin="round"
-       id="path11" />
+       id="path11"
+       style="stroke:#24221c" />
     <path
        d="m 184,173 h 42"
        stroke="#126c70"
        stroke-width="2.5"
-       id="path12" />
+       id="path12"
+       style="stroke:#24221c" />
     <circle
        cx="226"
        cy="173"
        r="4"
        fill="#126c70"
-       id="circle12" />
+       id="circle12"
+       style="stroke:#24221c" />
     <path
        d="m 28,191 h 52 v 72"
        fill="none"
        stroke="#275ca0"
        stroke-width="2.5"
        stroke-linejoin="round"
-       id="path13" />
+       id="path13"
+       style="stroke:#24221c" />
     <path
        d="m 80,263 h 52 v -36"
        fill="none"
        stroke="#275ca0"
        stroke-width="2.5"
        stroke-linejoin="round"
-       id="path14" />
+       id="path14"
+       style="stroke:#24221c" />
     <path
        d="m 132,227 h 52 v -18"
        fill="none"
        stroke="#275ca0"
        stroke-width="2.5"
        stroke-linejoin="round"
-       id="path15" />
+       id="path15"
+       style="stroke:#24221c" />
     <path
        d="m 184,209 h 42"
        stroke="#275ca0"
        stroke-width="2.5"
-       id="path16" />
+       id="path16"
+       style="stroke:#24221c" />
     <circle
        cx="226"
        cy="209"
        r="4"
        fill="#275ca0"
-       id="circle16" />
+       id="circle16"
+       style="stroke:#24221c" />
     <path
        d="m 132,227 h 52 v 18"
        fill="none"
        stroke="#275ca0"
        stroke-width="2.5"
        stroke-linejoin="round"
-       id="path17" />
+       id="path17"
+       style="stroke:#24221c" />
     <path
        d="m 184,245 h 42"
        stroke="#275ca0"
        stroke-width="2.5"
-       id="path18" />
+       id="path18"
+       style="stroke:#24221c" />
     <circle
        cx="226"
        cy="245"
        r="4"
        fill="#275ca0"
-       id="circle18" />
+       id="circle18"
+       style="stroke:#24221c" />
     <path
        d="m 80,263 h 52 v 36"
        fill="none"
        stroke="#275ca0"
        stroke-width="2.5"
        stroke-linejoin="round"
-       id="path19" />
+       id="path19"
+       style="stroke:#24221c" />
     <path
        d="m 132,299 h 52 v -18"
        fill="none"
        stroke="#275ca0"
        stroke-width="2.5"
        stroke-linejoin="round"
-       id="path20" />
+       id="path20"
+       style="stroke:#24221c" />
     <path
        d="m 184,281 h 42"
        stroke="#275ca0"
        stroke-width="2.5"
-       id="path21" />
+       id="path21"
+       style="stroke:#24221c" />
     <circle
        cx="226"
        cy="281"
        r="4"
        fill="#275ca0"
-       id="circle21" />
+       id="circle21"
+       style="stroke:#24221c" />
     <path
        d="m 132,299 h 52 v 18"
        fill="none"
        stroke="#275ca0"
        stroke-width="2.5"
        stroke-linejoin="round"
-       id="path22" />
+       id="path22"
+       style="stroke:#24221c" />
     <path
        d="m 184,317 h 42"
        stroke="#275ca0"
        stroke-width="2.5"
-       id="path23" />
+       id="path23"
+       style="stroke:#24221c" />
     <circle
        cx="226"
        cy="317"
        r="4"
        fill="#275ca0"
-       id="circle23" />
+       id="circle23"
+       style="stroke:#24221c" />
     <path
        d="M 28,333 H 226"
        stroke="#a9bdc7"
-       id="path110" />
+       id="path110"
+       style="stroke:#24221c" />
   </g>
   <metadata
      id="metadata141">
