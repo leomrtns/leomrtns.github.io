@@ -64,7 +64,7 @@ body:has(.home-hero) main { margin-top: 0; }
 .project-art { height: 170px; margin-bottom: 1.3rem; }
 .project-art img, .blog-mascot img {
   display: block; width: 100%; height: 100%; object-fit: cover; object-position: 67% center;
-  filter: saturate(.45); mix-blend-mode: multiply;
+  filter: saturate(.45);
 }
 .blog-intro { display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; }
 .blog-mascot { flex: 0 0 210px; height: 145px; }
@@ -95,12 +95,14 @@ blockquote { border-left: 3px solid var(--teal); color: var(--muted); padding: .
 .quarto-listing .listing-description { color: var(--muted); }
 .quarto-listing-default .quarto-post { padding-block: 1.6rem; }
 .quarto-listing-default .quarto-post .thumbnail { flex-basis: 28%; }
-.quarto-listing-default .quarto-post .thumbnail img {
-  width: 100%; height: 160px; object-fit: cover; object-position: 65% center; border-radius: 4px;
+.quarto-listing-default .quarto-post .thumbnail > a {
+  display: block; overflow: hidden; border-radius: 4px;
   background: var(--figure-wash);
 }
-.quarto-listing-default .quarto-post .thumbnail img[src*="logo_"] { mix-blend-mode: multiply; filter: saturate(.45); }
-.quarto-listing-default .quarto-post .thumbnail img[src*="design/posts/"] { object-fit: contain; }
+.quarto-listing-default .quarto-post .thumbnail img {
+  display: block; width: 100%; height: 160px; object-fit: contain; object-position: center;
+  filter: saturate(.45);
+}
 .quarto-listing-category-title { font-size: .9rem; }
 .nav-footer { border-top: 1px solid var(--line); padding-block: 1.5rem; font-size: .85rem; flex-direction: column; gap: .8rem; }
 .nav-footer .nav-footer-left, .nav-footer .nav-footer-right { text-align: center; flex: auto; }

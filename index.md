@@ -90,21 +90,21 @@ Hierarchical Bayesian species tree estimation from multiple gene families.
 ::: {.writing-row}
 [5 JAN 2026 / PERSONAL]{.writing-date}
 
-### [Back to blogging](posts/back-to-blogging/index.md)
+### [Back to blogging](posts/260105-back-to-blogging/index.md)
 
 On keeping a lasting record of ideas and conversations.
 :::
 ::: {.writing-row}
 [16 AUG 2022 / PHYLOGENETICS]{.writing-date}
 
-### [Not all invariant sites are created the same](posts/invariant-sites/index.md)
+### [Not all invariant sites are created the same](posts/220816-invariant-sites/index.md)
 
 Why removing invariant sites is usually a bad idea for maximum likelihood tree inference.
 :::
 ::: {.writing-row}
 [1 FEB 2022 / ALGORITHMS]{.writing-date}
 
-### [Minimal example of a rolling hash](posts/rolling-hash/index.ipynb)
+### [Minimal example of a rolling hash](posts/220201-rolling-hash/index.ipynb)
 
 A notebook exploring a rolling-hash implementation in biomcmc-lib.
 :::

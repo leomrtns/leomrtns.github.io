@@ -1,6 +1,6 @@
 # Writing posts
 
-The blog accepts `.md`, `.qmd`, and `.ipynb` files. Use one `posts/<slug>/index.<extension>` per article. Images and downloads go in the same folder. Do not keep both `index.md` and `index.qmd` for one article: both would generate `index.html`.
+The blog accepts `.md`, `.qmd`, and `.ipynb` files. Use one `posts/<YYMMDD-slug>/index.<extension>` per article. Images and downloads go in the same folder. Do not keep both `index.md` and `index.qmd` for one article: both would generate `index.html`.
 
 ## Obsidian
 
@@ -12,12 +12,12 @@ Create a draft from the repository root:
 python3 scripts/new-post.py sequence-notes --title "Notes on sequences" --format md
 ```
 
-Open `posts/sequence-notes/index.md` in Obsidian. Replace the sample text, description and categories. The top of the note is ordinary YAML metadata:
+The helper prefixes the folder with today’s date in `YYMMDD` form, for example `posts/260909-sequence-notes/index.md` on 9 September 2026. Pass `--date 2026-09-09` to specify a date; it sets both the prefix and the article’s `date` field. Supply the slug without a date prefix. Open the generated file in Obsidian. Replace the sample text, description and categories. The top of the note is ordinary YAML metadata:
 
 ```yaml
 ---
 title: "Notes on sequences"
-date: 2026-09-08
+date: 2026-09-09
 description: "What these notes explain."
 categories: [phylogenetics]
 draft: true
@@ -26,7 +26,7 @@ draft: true
 
 Set `draft: false` when ready. Drafts are excluded from the public site, search and RSS. The original `_drafts/` folder is completely excluded; to publish one of those drafts, copy it into a new post folder and explicitly set its publication date and status.
 
-Use portable Markdown, including `$inline math$` and `$$display math$$`. Use `[label](../other-post/index.md)` and `![caption](figure.svg)`, not Obsidian-only `[[wikilinks]]`, `![[embeds]]`, Dataview, or plugin-specific syntax. Obsidian's New link format can be set to Relative path, and Use Wikilinks turned off. Settings are not changed automatically. Quarto-specific citations and cross-references are checked in the website preview; Obsidian's preview may differ.
+Use portable Markdown, including `$inline math$` and `$$display math$$`. Use `[label](../260909-other-post/index.md)` and `![caption](figure.svg)`, not Obsidian-only `[[wikilinks]]`, `![[embeds]]`, Dataview, or plugin-specific syntax. Obsidian's New link format can be set to Relative path, and Use Wikilinks turned off. Settings are not changed automatically. Quarto-specific citations and cross-references are checked in the website preview; Obsidian's preview may differ.
 
 ## VS Code notebooks
 
@@ -57,15 +57,17 @@ A `.qmd` file is an ordinary text file. You can create one in any editor by savi
 python3 scripts/new-post.py density-example --title "A density example" --format qmd
 ```
 
-This template includes an executable Python example, a LaTeX equation and a labelled figure. Install its NumPy/Matplotlib dependencies in your analysis environment. Set `QUARTO_PYTHON` to that environment's Python if needed, then render the individual post:
+The example render command below assumes the post was created on 9 September 2026; use the dated path printed by the helper. This template includes an executable Python example, a LaTeX equation and a labelled figure. Install its NumPy/Matplotlib dependencies in your analysis environment. Set `QUARTO_PYTHON` to that environment's Python if needed, then render the individual post:
 
 ```bash
-./scripts/quarto.sh render posts/density-example/index.qmd
+./scripts/quarto.sh render posts/260909-density-example/index.qmd
 ```
 
 The template explicitly enables execution and freezes its results. Commit the resulting `_freeze/` files with the source. A whole-site build can then reuse those computations without installing every historical analysis dependency. If the file has never been rendered locally, there are no frozen results to reuse. Explicitly rendering the individual post updates the computation; a whole-site render with `freeze: true` reuses existing results even if the source has changed.
 
 For a prose-only `.qmd`, remove the `jupyter` and executable-code settings, or use `.md` instead. Code blocks marked with a language (` ```c `) display code; Quarto computational blocks (` ```{python} `) can execute it when enabled.
+
+Keep a published post’s directory name stable even if its publication metadata changes later. The blog listing sorts by the metadata `date`, while the directory prefix makes the source folders easy to navigate.
 
 ## Figures
 
@@ -78,9 +80,9 @@ image-alt: A short description of the figure
 
 Put that image beside the post, or use a shared `/assets/...` path. Posts without an explicit image inherit the raccoon from `posts/_metadata.yml`. Listing diagrams illustrate the article's topic; they are not additional experimental results.
 
-Project artwork keeps its original files under `assets/images/`. CSS gives it a consistent frame, softens saturation, and blends white into the shared blue/teal background. Scientific plots inside articles keep their original colours.
+Put shared artwork under `assets/images/`, and post-specific figures beside their article. CSS reduces saturation for project cards, the blog mascot, and blog listing thumbnails. Their backgrounds sit underneath the images: transparent areas reveal the background, while opaque white stays white. Blog thumbnails show the whole image regardless of its filename or folder. Scientific plots inside articles keep their original colours.
 
-To replace the homepage figure, change the `<img>` source and alt text in `index.md`, and update its width/height to the new image's proportions. Transparent SVG or PNG artwork will reveal the default background beneath it. The background belongs to `.hero-science`, independently of the image; change `--figure-background` and `--figure-wash` in `assets/design/theme.scss` to adjust it everywhere those figure surfaces are used.
+To replace the homepage figure, change the `<img>` source and alt text in `index.md`, and update its width/height to the new image's proportions. Transparent SVG or PNG artwork will reveal the default background beneath it. The background belongs to `.hero-science`, independently of the image; change `--figure-background` and `--figure-wash` in `assets/css/theme.scss` to adjust it everywhere those figure surfaces are used. See the [maintainer notes](../README_transition.md#styling-and-image-roles) for the shared settings and framing rules.
 
 Existing notebook outputs and the colour-printing screenshot are preserved. Their surrounding layout, caption typography, and code blocks share the site's design. Do not recolour an image where colour is part of the example or a scientific encoding.
 

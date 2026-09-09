@@ -33,7 +33,12 @@ class Page(HTMLParser):
 
 pages = [OUT / p for p in ['index.html','projects/index.html','blog/index.html','about/index.html',
                            'publications/index.html','doxygen/index.html','404.html']]
-pages += list((OUT / 'posts').glob('*/index.html'))
+# Renamed post directories leave redirect pages behind. Count only current article sources.
+article_pages = sorted({OUT / source.relative_to(ROOT).with_suffix('.html')
+                        for source in (ROOT / 'posts').glob('*/index.*')
+                        if source.suffix in {'.md', '.qmd', '.ipynb'}
+                        and (OUT / source.relative_to(ROOT).with_suffix('.html')).exists()})
+pages += article_pages
 parsed = {}
 for path in pages:
   if not path.exists():
@@ -72,7 +77,7 @@ for path, page in parsed.items():
 
 mapping = json.loads((ROOT / 'scripts/migration-map.json').read_text())
 blog = (OUT / 'blog/index.html').read_text()
-if blog.count('class="thumbnail-image"') != len(list((OUT / 'posts').glob('*/index.html'))):
+if blog.count('class="thumbnail-image"') != len(article_pages):
   errors.append('Each published post should have one blog listing thumbnail')
 if 'category=Binfie' in (OUT / 'projects/index.html').read_text():
   errors.append('The removed Binfie category shortcut is still on Projects')
@@ -85,6 +90,9 @@ if '<li class="publication">' not in publications or 'https://orcid.org/0000-000
 if 'class="review-summary"' not in publications or '<summary>Reviewing by journal</summary>' not in publications:
   errors.append('Publications page is missing the peer-review summary or journal breakdown')
 for item in mapping:
+  current_page = OUT / Path(item['target']).with_suffix('.html')
+  if not current_page.exists():
+    errors.append(f'Missing migrated article: {item["target"]}')
   if item['target'].endswith('.ipynb'):
     source = ROOT / item['target']
     doc = json.loads(source.read_text())
@@ -101,6 +109,20 @@ for item in mapping:
       target /= 'index.html'
     if not target.exists():
       errors.append(f'Missing old route: {alias}')
+    else:
+      redirect = Page()
+      redirect.feed(target.read_text())
+      if not any((target.parent / unquote(urlsplit(link).path)).resolve() == current_page.resolve()
+                 for link in redirect.links):
+        errors.append(f'Old route does not point to its current article: {alias}')
+  current = current_page.parent
+  for previous in item.get('previous_directories', []):
+    for resource in current.rglob('*'):
+      if not resource.is_file() or resource.suffix == '.html':
+        continue
+      old_resource = OUT / previous / resource.relative_to(current)
+      if not old_resource.exists() or old_resource.read_bytes() != resource.read_bytes():
+        errors.append(f'Renamed article resource missing/changed: {old_resource.relative_to(OUT)}')
 
 for folder in ['doxygen-biomcmclib', 'SpecImage']:
   for source in (ROOT / folder).rglob('*'):
@@ -110,7 +132,7 @@ for folder in ['doxygen-biomcmclib', 'SpecImage']:
     if not destination.exists() or source.read_bytes() != destination.read_bytes():
       errors.append(f'Legacy resource missing/changed: {source.relative_to(ROOT)}')
 
-for forbidden in ['_drafts','_posts','_pages','authoring','scripts','.github','.local-state','publications/data']:
+for forbidden in ['old','_drafts','_posts','_pages','authoring','scripts','.github','.local-state','publications/data']:
   if (OUT / forbidden).exists():
     errors.append(f'Nonpublic authoring directory in output: {forbidden}')
 

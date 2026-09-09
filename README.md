@@ -4,13 +4,21 @@ Source for **[leomrtns.github.io](https://leomrtns.github.io/)**: projects, publ
 
 ## Write a post
 
-Create one folder per article under `posts/`, with one of these source files:
+Create one folder per article under `posts/`, named `YYMMDD-title`, with one of these source files:
 
 | File | How to write it |
 | --- | --- |
-| `posts/my-article/index.md` | Markdown, mathematics, and displayed code in Obsidian or any text editor. |
-| `posts/my-article/index.ipynb` | A Jupyter notebook edited in VS Code or Jupyter; run changed computations and save the outputs. |
-| `posts/my-article/index.qmd` | A Quarto document; explicitly render executable code locally and commit its `_freeze/` results. |
+| `posts/260909-my-article/index.md` | Markdown, mathematics, and displayed code in Obsidian or any text editor. |
+| `posts/260909-my-article/index.ipynb` | A Jupyter notebook edited in VS Code or Jupyter; run changed computations and save the outputs. |
+| `posts/260909-my-article/index.qmd` | A Quarto document; explicitly render executable code locally and commit its `_freeze/` results. |
+
+The prefix records the post date when the directory is created; `260909` means 9 September 2026. The new-post helper adds today’s prefix automatically:
+
+```bash
+python3 scripts/new-post.py my-article --title "My article" --format md
+```
+
+Use `--date 2026-09-09` to choose a different date. Keep the directory name stable after publication; changing the date in the article metadata does not require renaming the directory.
 
 Put figures and downloads beside the entry. Use only one `index` source format per article. For example, a Markdown post starts with:
 
@@ -55,7 +63,7 @@ python3 scripts/validate-site.py
 For example, after editing a Markdown article:
 
 ```bash
-git add posts/my-article
+git add posts/260909-my-article
 git commit -m "Add my article"
 git push origin main
 ```
