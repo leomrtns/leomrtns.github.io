@@ -37,3 +37,5 @@ I still have some stuff to do, like deciding if I should invest in a blog with j
 ).
 Or checking if the RSS gives us the full post &mdash;at some point article feeds started forcing you to click back to
 the original site to read the full content, I guess fitting into my first complaint of volatile content.
+Update from 2026.09.09: I moved to [Quarto](https://quarto.org/docs/guide/) for the blog, which supports Jupyter
+notebooks and markdown. I also have a script to update the list of publications based on ORCID. 

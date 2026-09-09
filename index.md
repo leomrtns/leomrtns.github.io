@@ -12,7 +12,8 @@ toc: false
 
 # Understanding evolution.<br>[Building the tools.]{.accent}
 
-I’m Leo Martins, a Bayesian computational biologist at the University of Liverpool. I develop models and software to understand how genomes evolve.
+I’m Leo Martins, a Bayesian Data Engineer at the University of Liverpool. I develop models to understand how genomes evolve, 
+in order to help solving healthcare problems.
 
 ::: {.hero-actions}
 [Explore my projects →](projects/index.md){.primary-link}
@@ -23,11 +24,11 @@ I’m Leo Martins, a Bayesian computational biologist at the University of Liver
 :::
 
 ::: {.hero-science}
-[SHARED HISTORY / DIVERGING SEQUENCES]{.eyebrow}
+[SHARED HISTORY / DIVERGING OBJECTS]{.eyebrow}
 
 <img src="assets/design/evolution.svg" class="hero-diagram" width="580" height="400" alt="An illustrative phylogenetic tree beside eight aligned DNA sequences; shared ancestry helps explain their similarities and differences.">
 
-[Different sequences. A shared evolutionary history.]{.figure-note}
+[A shared evolutionary history describe how genomes evolve.]{.figure-note}
 :::
 :::
 

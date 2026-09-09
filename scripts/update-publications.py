@@ -212,7 +212,8 @@ def render_reviews(cached, venues):
 def render(cached):
   rows = publications(cached['response'])
   updated = datetime.fromisoformat(cached['fetched_at']).strftime('%d %B %Y').lstrip('0')
-  chunks = [f'{len(rows)} works from [my ORCID record](https://orcid.org/{ORCID}) · Refreshed {updated}.\n',
+  chunks = [f'## Publications\n\n',
+          f'{len(rows)} works from [my ORCID record](https://orcid.org/{ORCID}) · Refreshed {updated}.\n',
             'Includes articles, preprints, and other research outputs recorded on ORCID.\n']
   year = None
   for row in rows:
@@ -220,7 +221,7 @@ def render(cached):
       if year is not None:
         chunks.append('</ol>\n```\n')
       year = row['year']
-      chunks.append(f'\n## {year or "Undated"} {{#year-{year or "undated"}}}\n\n```{{=html}}\n<ol class="publication-list">')
+      chunks.append(f'\n### {year or "Undated"} {{#year-{year or "undated"}}}\n\n```{{=html}}\n<ol class="publication-list">')
     metadata = ' · '.join(escape(item) for item in [row['venue'], row['type'].capitalize()] if item)
     chunks.append('<li class="publication">'
                   f'<h3><a href="{escape(row["url"], quote=True)}">{escape(row["title"])}</a></h3>'
