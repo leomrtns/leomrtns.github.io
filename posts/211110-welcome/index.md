@@ -7,8 +7,6 @@ author: Leo Martins
 categories:
 - Misc
 description: A brief introduction and a new chapter in Liverpool.
-aliases:
-- /Misc/welcome/
 toc: false
 ---
 

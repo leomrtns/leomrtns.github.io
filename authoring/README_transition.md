@@ -70,10 +70,10 @@ The annotated tag [`legacy-website-2026-09-08`](https://github.com/leomrtns/leom
 - `assets/design/leo.mplstyle`: matching Matplotlib defaults for future figures.
 - `assets/design/posts/`: schematic thumbnails for the technical articles.
 - `doxygen-biomcmclib/` and `SpecImage/`: original documentation resources copied unchanged.
-- `scripts/migration-map.json`: migrated routes and notebook code/output fingerprints.
-- `scripts/post-render.py`: legacy indexes, feeds, aliases, and attachment paths.
+- The former migration map recorded routes and notebook fingerprints; it has now been removed.
+- `scripts/post-render.py`: legacy blog indexes, feeds, and attachment paths; current notebook downloads.
 
-The old Jekyll source folders and configuration remain in Git for reference but are outside Quarto's explicit render list. Posts preserve their original text, apart from correcting one broken `random.org` link. Notebook code and outputs are unchanged; the migration changes metadata and adds stable cell IDs. Run `python3 scripts/validate-site.py --check-migration` to verify the original C code/output fingerprints. This optional audit is not enforced by CI, so intentional future notebook edits remain possible. The home diagram is original schematic geometry, not inferred biological data. The reference site's source and graphics were not copied.
+The old Jekyll source folders and configuration remain in Git for reference but are outside Quarto's explicit render list. Posts preserve their original text, apart from correcting one broken `random.org` link. Notebook code and outputs are unchanged; the migration changes metadata and adds stable cell IDs. The original fingerprint audit was retired after migration; current validation permits intentional notebook edits and checks downloads against current sources. The home diagram is original schematic geometry, not inferred biological data. The reference site's source and graphics were not copied.
 
 
 ## Verification and local setup
@@ -91,7 +91,7 @@ The [original validation record](authoring/VALIDATION.md) records the migration 
 
 ## Dated post directories
 
-Post folders now use `YYMMDD-title`. The nine existing entries use their recorded post dates; filesystem creation times from a clone are not meaningful authoring dates. `scripts/migration-map.json` maps the previous undated URLs to the dated articles. The build writes redirects and preserves notebook, image, and attachment downloads at their previous paths. Notebook source, code, and saved outputs are unchanged by the directory renames.
+Post folders now use `YYMMDD-title`. The nine existing entries use their recorded post dates; filesystem creation times from a clone are not meaningful authoring dates. At migration time, a map preserved the previous undated URLs and downloads. That map and its article redirects have since been removed; optional post aliases can preserve selected old URLs. Notebook source, code, and saved outputs are unchanged by the directory renames.
 
 ## Styling and image roles
 
@@ -137,7 +137,7 @@ When deliberately adding/removing project cards, changing footer links, or renam
 - Add a new top-level page to `project.render` in `_quarto.yml`; add its navigation entry separately. The validator also has an explicit list of main pages if you want the new page checked.
 - `_site/` is configured in `_quarto.yml`, but also named in the workflow and validator. Changing the output directory requires updating all of those; the post-render script reads Quarto's output-directory environment variable with `_site` as fallback.
 - The site URL and footer identity are configured in `_quarto.yml`; the ORCID ID is also embedded in `scripts/update-publications.py` and the validator. Moving the website to a repository subpath would require reviewing root-relative links and these settings.
-- `scripts/migration-map.json` and `scripts/post-render.py` retain redirects and old download URLs for existing articles. New posts need no migration-map entry or redirects. Renaming, deleting, or hiding a mapped article requires reviewing its mapping, manual links, and validation expectations. The validator requires all mapped articles/aliases and at least as many RSS entries as mapped articles. Notebook fingerprint comparison is only enabled by `--check-migration`.
+- Validation now discovers current published sources and verifies their pages, notebook downloads, and RSS URLs. No migration-map entry, historical source path, checksum, or article alias is required. See the main README for current validation and optional redirects.
 - Do not remove the whole post-render script just to remove redirects: it also creates `.nojekyll`, handles draft output, and copies downloadable notebooks. The historical attachment path is explicitly named there.
 - `doxygen-biomcmclib/` and `SpecImage/` are copied unchanged, and the validator compares their resources. All of `assets/` is a published resource; keep private files and maintainer notes elsewhere. `old/` is excluded from the rendered website, but its committed contents remain available on GitHub.
 

@@ -1,3 +1,5 @@
+> Historical migration report. The current checks use published sources and RSS URLs; migration counts, article aliases, and original notebook fingerprints below are no longer requirements. See the main README.
+
 # Local validation — 8 September 2026
 
 Built with Quarto 1.10.18 and Python 3.12. This is a local source/build validation; the GitHub workflow has not run and no site has been uploaded.

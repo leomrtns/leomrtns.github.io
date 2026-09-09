@@ -48,8 +48,19 @@ Open `http://127.0.0.1:4260/`. Stop preview before running a separate full build
 
 ```bash
 ./scripts/quarto.sh render
+python3 scripts/test-site-content.py
 python3 scripts/validate-site.py
 ```
+
+## Validation and old URLs
+
+Validation discovers the current sources under `posts/`, excludes `draft: true` posts (including inherited directory metadata), and checks their rendered pages, notebook downloads, and RSS links. RSS must contain current published URLs with no duplicates, up to Quarto's default 20-item limit or the `listing.feed.items` value in `blog/index.md`. Smaller blogs must include every published post. The legacy feed URLs remain copies of the current feed.
+
+There is no migration inventory to maintain. Delete, rename, or edit posts normally, then run a full render and validation. Update any manually written links to a moved or deleted post; the internal-link check still catches those. Use a clean build when checking deletions so previous generated files cannot hide broken links.
+
+An optional `aliases` field in a post's YAML metadata asks Quarto to redirect old addresses to that post. The former migration aliases have been removed; add aliases only if you want to preserve specific old links. Removing an alias or moving a post without one means the old address may return 404. The general old blog indexes and RSS subscription URLs remain supported by `scripts/post-render.py`.
+
+The old migration map's `source` fields were historical labels, not files used by the build. The map and historical notebook checksum audit have been removed. Notebook downloads are checked against their **current** source files, so intentional code and output edits are allowed. Archived sources in `old/` are not required by these checks.
 
 ## Publish an update
 
@@ -101,4 +112,4 @@ Commit changed data files if the refreshed snapshot should be saved in Git. Refr
 | `scripts/`, `.github/workflows/website.yml` | Build helpers and automatic publishing. |
 | `publications/data/` | Saved ORCID records and journal names. |
 
-Further reading: [authoring guide](authoring/README.md), [transition notes](README_transition.md), [Quarto documentation](https://quarto.org/docs/guide/).
+Further reading: [authoring guide](authoring/README.md), [transition notes](authoring/README_transition.md), [Quarto documentation](https://quarto.org/docs/guide/).

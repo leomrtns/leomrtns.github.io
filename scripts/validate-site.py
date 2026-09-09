@@ -1,18 +1,13 @@
-"""Check the built site, migrated notebook contents, feeds, and legacy assets."""
-import argparse
-import hashlib
+"""Check current published articles, internal links, feeds, and legacy assets."""
 from html.parser import HTMLParser
-import json
 from pathlib import Path
-import re
-from urllib.parse import unquote, urlsplit
-import xml.etree.ElementTree as ET
+from urllib.parse import unquote, urlsplit, urljoin
+import yaml
+
+from site_content import post_sources, front_matter, feed_errors
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / '_site'
-parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--check-migration', action='store_true', help='Verify original C code and outputs are unchanged')
-args = parser.parse_args()
 errors = []
 
 class Page(HTMLParser):
@@ -33,11 +28,22 @@ class Page(HTMLParser):
 
 pages = [OUT / p for p in ['index.html','projects/index.html','blog/index.html','about/index.html',
                            'publications/index.html','doxygen/index.html','404.html']]
-# Renamed post directories leave redirect pages behind. Count only current article sources.
-article_pages = sorted({OUT / source.relative_to(ROOT).with_suffix('.html')
-                        for source in (ROOT / 'posts').glob('*/index.*')
-                        if source.suffix in {'.md', '.qmd', '.ipynb'}
-                        and (OUT / source.relative_to(ROOT).with_suffix('.html')).exists()})
+sources = list(post_sources(ROOT))
+published = [source for source, draft in sources if not draft]
+article_pages = sorted({OUT / source.relative_to(ROOT).with_suffix('.html') for source in published})
+if len(article_pages) != len(published):
+  errors.append('Use only one index source file per article directory')
+for source, draft in sources:
+  html = OUT / source.relative_to(ROOT).with_suffix('.html')
+  download = OUT / source.relative_to(ROOT)
+  if draft:
+    if html.exists() or (source.suffix == '.ipynb' and download.exists()):
+      errors.append(f'Draft is exposed in output: {source.relative_to(ROOT)}')
+  elif source.suffix == '.ipynb':
+    if not download.exists():
+      errors.append(f'Notebook download missing: {source.relative_to(ROOT)}')
+    elif download.read_bytes() != source.read_bytes():
+      errors.append(f'Notebook download differs from current source: {source.relative_to(ROOT)}')
 pages += article_pages
 parsed = {}
 for path in pages:
@@ -75,7 +81,6 @@ for path, page in parsed.items():
       if unquote(url.fragment) not in page.ids:
         errors.append(f'{path.relative_to(OUT)} → missing fragment {value}')
 
-mapping = json.loads((ROOT / 'scripts/migration-map.json').read_text())
 blog = (OUT / 'blog/index.html').read_text()
 if blog.count('class="thumbnail-image"') != len(article_pages):
   errors.append('Each published post should have one blog listing thumbnail')
@@ -89,41 +94,6 @@ if '<li class="publication">' not in publications or 'https://orcid.org/0000-000
   errors.append('Publications page is missing records or the ORCID source link')
 if 'class="review-summary"' not in publications or '<summary>Reviewing by journal</summary>' not in publications:
   errors.append('Publications page is missing the peer-review summary or journal breakdown')
-for item in mapping:
-  current_page = OUT / Path(item['target']).with_suffix('.html')
-  if not current_page.exists():
-    errors.append(f'Missing migrated article: {item["target"]}')
-  if item['target'].endswith('.ipynb'):
-    source = ROOT / item['target']
-    doc = json.loads(source.read_text())
-    payload = [{'source':c['source'],'outputs':c.get('outputs',[]),'execution_count':c.get('execution_count')}
-               for c in doc['cells'] if c['cell_type']=='code']
-    digest = hashlib.sha256(json.dumps(payload,sort_keys=True).encode()).hexdigest()
-    if args.check_migration and digest != item['code_outputs_sha256']:
-      errors.append(f'Migrated code or output changed: {item["target"]}')
-    if not (OUT / item['target']).exists():
-      errors.append(f'Notebook download missing: {item["target"]}')
-  for alias in item['aliases']:
-    target = OUT / alias.lstrip('/')
-    if alias.endswith('/'):
-      target /= 'index.html'
-    if not target.exists():
-      errors.append(f'Missing old route: {alias}')
-    else:
-      redirect = Page()
-      redirect.feed(target.read_text())
-      if not any((target.parent / unquote(urlsplit(link).path)).resolve() == current_page.resolve()
-                 for link in redirect.links):
-        errors.append(f'Old route does not point to its current article: {alias}')
-  current = current_page.parent
-  for previous in item.get('previous_directories', []):
-    for resource in current.rglob('*'):
-      if not resource.is_file() or resource.suffix == '.html':
-        continue
-      old_resource = OUT / previous / resource.relative_to(current)
-      if not old_resource.exists() or old_resource.read_bytes() != resource.read_bytes():
-        errors.append(f'Renamed article resource missing/changed: {old_resource.relative_to(OUT)}')
-
 for folder in ['doxygen-biomcmclib', 'SpecImage']:
   for source in (ROOT / folder).rglob('*'):
     if not source.is_file():
@@ -136,16 +106,17 @@ for forbidden in ['old','_drafts','_posts','_pages','authoring','scripts','.gith
   if (OUT / forbidden).exists():
     errors.append(f'Nonpublic authoring directory in output: {forbidden}')
 
-feed = ET.parse(OUT / 'blog/index.xml')
-items = feed.findall('./channel/item')
-if len(items) < len(mapping):
-  errors.append(f'RSS contains only {len(items)} of {len(mapping)} migrated posts')
+configuration = yaml.safe_load((ROOT / '_quarto.yml').read_text())
+site_url = configuration['website']['site-url'].rstrip('/') + '/'
+expected_urls = [urljoin(site_url, path.relative_to(OUT).as_posix()) for path in article_pages]
+feed_options = front_matter((ROOT / 'blog/index.md').read_text())['listing'].get('feed', True)
+feed_limit = feed_options.get('items', 20) if isinstance(feed_options, dict) else 20
+errors += feed_errors(OUT / 'blog/index.xml', expected_urls, feed_limit)
 for name in ['feed.xml','jupyterblog/feed.xml']:
-  if (OUT / name).read_bytes() != (OUT / 'blog/index.xml').read_bytes():
+  if not (OUT / name).exists() or not (OUT / 'blog/index.xml').exists():
+    errors.append(f'Missing feed: {name} or blog/index.xml')
+  elif (OUT / name).read_bytes() != (OUT / 'blog/index.xml').read_bytes():
     errors.append(f'Legacy feed differs: {name}')
 if errors:
   raise SystemExit('\n'.join(sorted(set(errors))))
-print(f'Validated {len(pages)} pages, {len(mapping)} migrated posts, notebook downloads, RSS, and legacy assets.')
-
-if args.check_migration:
-  print('All five migrated C notebooks retain their original code and outputs.')
+print(f'Validated {len(pages)} pages, {len(published)} published posts, notebook downloads, RSS, and legacy assets.')

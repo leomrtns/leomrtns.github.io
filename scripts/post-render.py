@@ -1,10 +1,11 @@
 """Keep earlier blog indexes, feeds and downloadable attachments accessible."""
 from html import escape
 from pathlib import Path
-import json
 import os
 import shutil
-import yaml
+import json
+
+from site_content import post_sources
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / os.environ.get('QUARTO_PROJECT_OUTPUT_DIR', '_site')
@@ -19,15 +20,7 @@ redirects = {
   'jupyterblog/search.html': 'blog/index.html',
   'jupyterblog/categories/index.html': 'blog/index.html',
   'jupyterblog/tags.html': 'blog/index.html',
-  'misc/welcome/index.html': 'posts/260104-welcome/index.html',
-  'personal/back-to-blogging/index.html': 'posts/260105-back-to-blogging/index.html',
 }
-mapping = json.loads((ROOT / 'scripts/migration-map.json').read_text())
-for item in mapping:
-  target = str(Path(item['target']).with_suffix('.html'))
-  for alias in item['aliases']:
-    alias = alias.lstrip('/')
-    redirects[alias + 'index.html' if alias.endswith('/') else alias] = target
 for old, new in redirects.items():
   if not (OUTPUT / new).exists():
     continue
@@ -57,32 +50,10 @@ if asset.exists():
 
 # Copy downloadable notebooks only for published articles.
 # A draft notebook must not be exposed as a raw resource.
-for source in (ROOT / 'posts').glob('*/index.*'):
-  if source.suffix not in {'.ipynb', '.md', '.qmd'}:
-    continue
-  if source.suffix == '.ipynb':
-    notebook = json.loads(source.read_text())
-    header = ''.join(notebook['cells'][0].get('source', []))
-  else:
-    header = source.read_text()
-  metadata = yaml.safe_load(header.split('---', 2)[1]) if header.startswith('---') else {}
+for source, draft in post_sources(ROOT):
   destination = OUTPUT / source.parent.relative_to(ROOT)
-  if (metadata or {}).get('draft') is True:
+  if draft:
     if destination.is_dir():
       shutil.rmtree(destination)  # Generated output only; source drafts are retained.
   elif source.suffix == '.ipynb' and (destination / 'index.html').exists():
     shutil.copy2(source, destination / source.name)
-
-# Keep directly shared notebook/figure/download URLs working after a directory rename.
-# HTML at the previous URL is a redirect; non-HTML resources retain their original bytes.
-for item in mapping:
-  current = OUTPUT / Path(item['target']).parent
-  if not (current / 'index.html').exists():
-    continue
-  for previous in item.get('previous_directories', []):
-    for source in current.rglob('*'):
-      if not source.is_file() or source.suffix == '.html':
-        continue
-      destination = OUTPUT / previous / source.relative_to(current)
-      destination.parent.mkdir(parents=True, exist_ok=True)
-      shutil.copy2(source, destination)

@@ -35,6 +35,8 @@ jobs:
           python scripts/update-publications.py --refresh
       - name: Render saved notebooks and Markdown
         run: quarto render
+      - name: Test article and RSS validation
+        run: python scripts/test-site-content.py
       - name: Validate content and internal links
         run: python scripts/validate-site.py
       - name: Package the published site

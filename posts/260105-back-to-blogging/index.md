@@ -7,8 +7,6 @@ author: Leo Martins
 categories:
 - Personal
 description: On keeping a lasting record of ideas and conversations.
-aliases:
-- /Personal/back-to-blogging/
 toc: false
 ---
 

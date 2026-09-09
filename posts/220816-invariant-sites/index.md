@@ -8,8 +8,6 @@ categories:
 - phylogenetics
 description: Why removing invariant sites is usually a bad idea for maximum likelihood
   tree inference
-aliases:
-- /jupyterblog/phylogenetics/2022/08/16/lnl_uncertainty.html
 toc: true
 ---
 
