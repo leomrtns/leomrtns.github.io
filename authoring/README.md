@@ -106,8 +106,8 @@ The result is shown in @fig-comparison.
 2. Run and save changed notebook computations, or explicitly render a computational `.qmd` to update `_freeze/`.
 3. Preview locally and set `draft: false` for articles ready to publish.
 4. Build and validate with `./scripts/quarto.sh render` and `python3 scripts/validate-site.py`.
-5. Commit and push source changes directly to `master`. GitHub Actions builds, checks, and deploys the HTML automatically. No pull request is required for this route.
+5. Commit and push source changes directly to `main`. GitHub Actions builds, checks, and deploys the HTML automatically. No pull request is required for this route.
 
-A local render does not publish anything. Pushing source changes to `master` starts the GitHub build and publication workflow. If you choose a separate branch, open a pull request targeting `master` and merge it yourself after its checks pass; the workflow does not merge it for you. New posts appear automatically in the Blog listing, search, and RSS. Homepage article selections are edited separately in `index.md`.
+A local render does not publish anything. Pushing source changes to `main` starts the GitHub build and publication workflow. If you choose a separate branch, open a pull request targeting `main` and merge it yourself after its checks pass; the workflow does not merge it for you. New posts appear automatically in the Blog listing, search, and RSS. Homepage article selections are edited separately in `index.md`.
 
-See the [repository README](../README.md) for the folder cleanup guide and exact workflow triggers. `_site/` is generated output, `_quarto.yml` and `_metadata.yml` are active configuration, and `_freeze/` contains saved computations—underscore names are not generally obsolete.
+See the [repository README](../README.md) for current publishing instructions and the [transition notes](../README_transition.md) for the folder cleanup guide. `_site/` is generated output, `_quarto.yml` and `_metadata.yml` are active configuration, and `_freeze/` contains saved computations—underscore names are not generally obsolete.

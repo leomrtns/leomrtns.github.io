@@ -2,9 +2,9 @@ name: Build and publish website
 
 on:
   push:
-    branches: [master, website-redesign]
+    branches: [main, website-redesign]
   pull_request:
-    branches: [master]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -38,13 +38,13 @@ jobs:
       - name: Validate content and internal links
         run: python scripts/validate-site.py
       - name: Package the published site
-        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
 
   deploy:
-    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     permissions:
