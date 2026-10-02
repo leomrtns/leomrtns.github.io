@@ -1,4 +1,12 @@
 
+# plus
+### translation
+a student can be very good, but not when it's time to speak. AI can translate written material s.t. they can enjoy more
+of an international experience.
+
+
+# minus
+
 What are the **main reasons you expect AI to have no effect on how quickly discoveries are made** in your field?
 
 > we're becoming less open (from site bandwidth restrictions to fewer organic code on github, SO, etc). This, and societal concerns will both dampen development of AI (fewer, more incremental models, with less subsidies).
