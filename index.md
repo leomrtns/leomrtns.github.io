@@ -24,7 +24,6 @@ in order to help solving healthcare problems.
 :::
 
 ::: {.hero-science}
-[SHARED HISTORY / DIVERGING OBJECTS]{.eyebrow}
 
 <img src="assets/design/evolution.svg" class="hero-diagram" width="580" height="400" alt="An illustrative phylogenetic tree beside eight aligned DNA sequences; shared ancestry helps explain their similarities and differences.">
 
