@@ -1,4 +1,4 @@
 # Notebook rendering only. No C kernel or analysis environment is needed.
 nbformat==5.11.1
-nbconvert==7.17.1
+nbconvert==7.17.2
 PyYAML==6.0.3
